@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="Mehmet Yıldırım Digital">
+<meta property="og:description" content="Web tasarım, sosyal medya yönetimi, Meta reklam ve e-ticaret entegrasyonları.">
+<meta property="og:image" content="https://mydigital.net.tr/logo-circle.jpg">
+<link rel="icon" href="mark-sm.png">
+<title>Mehmet Yıldırım Digital</title>
+<meta name="description" content="Web sitesi tasarımı, sosyal medya yönetimi, Meta reklam yönetimi ve e-ticaret pazaryeri entegrasyonları. İş birlikleri için 0552 410 30 09.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Montserrat:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap">
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#020B1A; --bg-2:#061427; --panel:#0A1B33; --panel-2:#0E2342; --line:#17335C; --line-2:#22497F;
+  --ink:#EEF3FB; --muted:#9BAECB; --dim:#6F84A6;
+  --blue:#1E7BFF; --cyan:#35B8FF; --glow:rgba(40,140,255,.55); --silver:#DCE2EA;
+  --display:"Archivo","Arial Black",system-ui,sans-serif;
+  --brand:"Montserrat",system-ui,sans-serif;
+  --body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --script:"Caveat","Segoe Script",cursive;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg);overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font:500 16px/1.65 var(--body);padding-inline:20px;overflow-x:clip}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+.wrap{max-width:1180px;margin-inline:auto}
+a{color:inherit}
+img,video{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-.015em}
+p{margin:0}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;cursor:pointer;text-decoration:none;font:800 15px/1 var(--body);padding:15px 22px;border-radius:999px;color:#fff;background:linear-gradient(135deg,var(--cyan),var(--blue));box-shadow:0 0 0 1px rgba(120,190,255,.35) inset,0 12px 30px -10px var(--glow);transition:transform .18s ease,box-shadow .18s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(160,210,255,.5) inset,0 16px 36px -10px var(--glow)}
+.btn.ghost{background:transparent;box-shadow:inset 0 0 0 1.5px var(--line-2)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 1.5px var(--cyan)}
+.btn.sm{padding:11px 17px;font-size:14px}
+.btn svg{width:17px;height:17px;flex:none}
+.kicker{font:500 12px/1 var(--brand);letter-spacing:.34em;text-transform:uppercase;color:var(--cyan);display:inline-flex;align-items:center;gap:14px}
+.kicker::before,.kicker.both::after{content:"";width:34px;height:1.5px;background:linear-gradient(90deg,transparent,var(--cyan))}
+.kicker.both::after{background:linear-gradient(90deg,var(--cyan),transparent)}
+.script{font:700 28px/1 var(--script);color:var(--cyan)}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;margin-inline:-20px;padding:12px 20px;background:rgba(2,11,26,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(34,73,127,.5)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:62px;height:auto}
+.brand .wm{display:grid;gap:5px}
+.brand b{font:500 14px/1 var(--brand);letter-spacing:.2em;color:var(--silver)}
+.brand small{font:500 10px/1 var(--brand);letter-spacing:.62em;color:var(--cyan)}
+.links{display:flex;gap:28px;font:600 14.5px/1 var(--body)}
+.links a{text-decoration:none;color:var(--muted);transition:color .15s}
+.links a:hover{color:#fff}
+@media (max-width:900px){.links{display:none}}
+@media (max-width:420px){.brand .wm{display:none}}
+
+/* hero */
+.hero{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-block:64px 56px}
+.hero::before{content:"";position:absolute;z-index:-1;width:min(820px,120vw);aspect-ratio:1;right:-18%;top:50%;transform:translateY(-50%);border-radius:50%;border:2px solid rgba(53,184,255,.55);box-shadow:0 0 60px 6px rgba(30,123,255,.35),inset 0 0 60px 6px rgba(30,123,255,.18);max-width:none}
+.hero::after{content:"";position:absolute;z-index:-2;inset:-10% -30% -10% 30%;background:radial-gradient(closest-side,rgba(30,123,255,.22),transparent)}
+.hero .script{display:inline-block;transform:rotate(-3deg);margin-bottom:16px}
+.hero h1{font-size:clamp(46px,7vw,92px);line-height:.93;font-weight:900;text-transform:uppercase}
+.hero h1 .b{display:block;background:linear-gradient(95deg,var(--cyan),var(--blue) 70%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 22px rgba(30,123,255,.45))}
+.hero .lead{font-size:18.5px;color:var(--muted);max-width:50ch;margin-top:24px}
+.hero .lead strong{color:var(--ink);font-weight:700}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.tagline{margin-top:34px;font:500 12px/1 var(--brand);letter-spacing:.38em;color:var(--dim);display:flex;flex-wrap:wrap;gap:10px 16px}
+.tagline i{font-style:normal;color:var(--cyan)}
+
+.reel{justify-self:center;position:relative;width:min(340px,100%)}
+.phone{position:relative;border-radius:34px;padding:9px;background:linear-gradient(160deg,#2a4670,#0a1a33 40%,#0a1a33 60%,#1e7bff);box-shadow:0 30px 80px -20px rgba(30,123,255,.55)}
+.phone video{width:100%;aspect-ratio:1080/1896;object-fit:cover;border-radius:26px;background:#000}
+.sound{position:absolute;right:20px;bottom:20px;width:46px;height:46px;border-radius:50%;border:0;display:grid;place-items:center;background:rgba(2,11,26,.7);color:#fff;cursor:pointer;backdrop-filter:blur(6px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.2)}
+.sound svg{width:20px;height:20px}
+.reel .note{z-index:2;position:absolute;left:-58px;top:40px;transform:rotate(-8deg);font:700 26px/1 var(--script);color:var(--silver);text-shadow:0 2px 12px #000}
+.reel .note2{z-index:2;position:absolute;right:-40px;bottom:120px;transform:rotate(6deg);font:700 24px/1.05 var(--script);color:var(--cyan);text-align:right;text-shadow:0 2px 12px #000}
+@media (max-width:980px){.reel .note,.reel .note2{display:none}}
+@media (max-width:880px){.hero{grid-template-columns:1fr;padding-block:44px}.hero::before{right:-50%;top:62%}}
+
+/* service rail */
+.rail{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:24px}
+.rail a{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;text-decoration:none;padding:20px 12px;border-radius:18px;background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);font:800 13.5px/1.2 var(--body);letter-spacing:.02em;text-transform:uppercase;transition:border-color .2s,transform .2s}
+.rail a:hover{border-color:var(--cyan);transform:translateY(-3px)}
+.ic{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;color:#fff;background:radial-gradient(circle at 35% 30%,var(--cyan),var(--blue) 70%);box-shadow:0 0 22px -2px var(--glow)}
+.ic svg{width:26px;height:26px}
+@media (max-width:900px){.rail{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:560px){.rail{grid-template-columns:repeat(2,1fr)}.rail a:last-child{grid-column:1/-1}}
+
+/* service features */
+section{padding-block:72px}
+.head{display:grid;gap:14px;margin-bottom:40px;max-width:720px}
+.head.center{margin-inline:auto;text-align:center;justify-items:center}
+.head h2{font-size:clamp(32px,4.6vw,54px);line-height:1.02;font-weight:900}
+.head p{color:var(--muted);font-size:17px}
+.feature{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center;padding-block:40px}
+.feature + .feature{border-top:1px solid rgba(34,73,127,.45)}
+.feature.flip{grid-template-columns:1.2fr .8fr}
+.feature.flip .shot{order:2}
+.shot{position:relative;border-radius:26px;overflow:hidden;border:1px solid var(--line-2);box-shadow:0 30px 70px -30px rgba(30,123,255,.6)}
+.shot img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 30%}
+.shot .badge{position:absolute;left:14px;top:14px;display:flex;align-items:center;gap:8px;padding:8px 12px 8px 8px;border-radius:999px;background:rgba(2,11,26,.78);backdrop-filter:blur(8px);font:800 12px/1 var(--body);letter-spacing:.06em;text-transform:uppercase}
+.shot .badge .ic{width:28px;height:28px}
+.shot .badge .ic svg{width:15px;height:15px}
+.copy{display:grid;gap:18px}
+.copy .script{font-size:30px}
+.copy h3{font-size:clamp(30px,3.8vw,46px);line-height:1.02;font-weight:900;text-transform:uppercase}
+.copy h3 span{color:var(--cyan)}
+.copy > p{color:var(--muted);font-size:17px;max-width:56ch}
+.checks{list-style:none;margin:4px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.checks li{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:14px;background:var(--panel);border:1px solid var(--line);font-weight:700;font-size:15px}
+.checks li::before{content:"";flex:none;width:20px;height:20px;border-radius:6px;background:var(--blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/14px no-repeat;box-shadow:0 0 12px -2px var(--glow)}
+.markets{display:flex;flex-wrap:wrap;gap:8px}
+.markets span{font:800 15px/1 var(--display);padding:12px 16px;border-radius:12px;background:#fff;color:#0A1B33;letter-spacing:0}
+.markets span:nth-child(1){color:#F27A1A}
+.markets span:nth-child(2){color:#FF6000}
+.markets span:nth-child(3){color:#6A1B9A}
+.markets span:nth-child(4){color:#1F2D6B}
+.markets span:nth-child(5){color:#1E7BFF}
+@media (max-width:880px){.feature,.feature.flip{grid-template-columns:1fr;gap:28px}.feature.flip .shot{order:0}.shot{max-width:460px}}
+@media (max-width:480px){.checks{grid-template-columns:1fr}}
+
+/* strategy band */
+.band{position:relative;overflow:hidden;border-radius:32px;padding:48px;background:radial-gradient(120% 140% at 100% 0%,rgba(53,184,255,.28),transparent 55%),linear-gradient(135deg,#0C2B5E,#061732);border:1px solid var(--line-2);display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.band h2{font-size:clamp(30px,4vw,48px);line-height:1.02;font-weight:900;text-transform:uppercase;margin-top:14px}
+.band p{color:#C5D4EC;margin-top:14px;font-size:17px;max-width:52ch}
+.benefits{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.benefits div{padding:18px;border-radius:18px;background:rgba(2,11,26,.45);border:1px solid rgba(53,184,255,.25)}
+.benefits b{display:block;font:800 16px/1.2 var(--body)}
+.benefits span{display:block;color:var(--muted);font-size:14px;margin-top:6px}
+@media (max-width:880px){.band{grid-template-columns:1fr;padding:30px}}
+@media (max-width:420px){.benefits{grid-template-columns:1fr}}
+
+/* process */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;counter-reset:n}
+.flow div{position:relative;padding:24px 18px 20px;border-radius:20px;background:var(--panel);border:1px solid var(--line)}
+.flow div::before{counter-increment:n;content:counter(n);position:absolute;top:-14px;left:18px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font:900 14px/1 var(--display);background:linear-gradient(135deg,var(--cyan),var(--blue));box-shadow:0 0 16px -2px var(--glow)}
+.flow b{display:block;font:900 20px/1.1 var(--display);text-transform:uppercase;margin-top:6px}
+.flow p{color:var(--muted);font-size:14.5px;margin-top:8px}
+@media (max-width:980px){.flow{grid-template-columns:repeat(3,1fr);row-gap:28px}}
+@media (max-width:600px){.flow{grid-template-columns:1fr 1fr}}
+@media (max-width:400px){.flow{grid-template-columns:1fr}}
+
+/* contact */
+.contact{display:grid;grid-template-columns:.95fr 1.05fr;gap:22px}
+.call{position:relative;overflow:hidden;border-radius:30px;padding:38px;background:linear-gradient(160deg,#0E2F66,#061430);border:1px solid var(--line-2);display:flex;flex-direction:column;gap:18px}
+.call::after{content:"";position:absolute;width:360px;aspect-ratio:1;right:-140px;bottom:-160px;border-radius:50%;border:2px solid rgba(53,184,255,.5);box-shadow:0 0 40px rgba(30,123,255,.4)}
+.call .lbl{font:500 12px/1 var(--brand);letter-spacing:.4em;color:var(--cyan)}
+.call .num{font:900 clamp(28px,4.2vw,52px)/1 var(--display);letter-spacing:-.01em;white-space:nowrap;font-variant-numeric:tabular-nums;user-select:all;text-shadow:0 0 30px rgba(30,123,255,.5)}
+.call p{color:#C5D4EC;max-width:40ch}
+.call .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;position:relative;z-index:1}
+.form{border-radius:30px;padding:32px;background:var(--panel);border:1px solid var(--line);display:grid;gap:14px}
+.form h3{font-size:24px;font-weight:900;text-transform:uppercase}
+.form label{display:grid;gap:7px;font:700 13px/1 var(--body);color:var(--muted)}
+.form input,.form select,.form textarea{width:100%;font:500 15px/1.45 var(--body);color:var(--ink);background:var(--bg-2);border:1.5px solid var(--line);border-radius:12px;padding:13px 14px}
+.form input::placeholder,.form textarea::placeholder{color:var(--dim)}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 4px rgba(53,184,255,.15)}
+.form .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form textarea{min-height:100px;resize:vertical}
+.result{border-radius:14px;padding:16px;background:var(--bg-2);border:1px solid var(--line-2);display:grid;gap:12px;font-size:14.5px;color:var(--muted)}
+.result .msg{color:var(--ink)}
+@media (max-width:880px){.contact{grid-template-columns:1fr}}
+@media (max-width:480px){.form .two{grid-template-columns:1fr}.call,.form{padding:24px}}
+
+footer{margin-top:40px;padding-block:44px 52px;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center}
+footer .logo{width:120px;border-radius:50%}
+footer .info{display:grid;gap:8px;color:var(--muted);font-size:14px}
+footer .info b{font:500 14px/1 var(--brand);letter-spacing:.24em;color:var(--silver)}
+footer .script{font-size:26px;text-align:right}
+@media (max-width:700px){footer{grid-template-columns:1fr;justify-items:start}footer .script{text-align:left}}
+.wa-float{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:40;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#fff;box-shadow:0 12px 30px -8px rgba(37,211,102,.7)}
+.wa-float svg{width:30px;height:30px}
+.toast{position:fixed;left:50%;bottom:calc(90px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:50;background:#fff;color:#061427;padding:12px 18px;border-radius:999px;font-weight:800;font-size:14px}
+</style>
+
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-web" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="2.5" y="4" width="19" height="16" rx="2.5"/><path d="M2.5 8.5h19"/><circle cx="12" cy="14.2" r="3.5"/><path d="M8.5 14.2h7M12 10.7c1.3 1.2 1.3 5.8 0 7M12 10.7c-1.3 1.2-1.3 5.8 0 7"/></symbol>
+  <symbol id="i-social" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor"/></symbol>
+  <symbol id="i-meta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 12c-2-3.4-3.6-5.5-5.6-5.5C4.2 6.5 2.5 9 2.5 12.3c0 2.6 1.3 4.2 3.2 4.2 2.1 0 3.6-2.2 6.3-7.2 2.2-4 3.8-2.8 5.3-2.8 2.4 0 4.2 2.8 4.2 5.9 0 2.5-1.2 4.1-3.1 4.1-2 0-3.3-1.9-6.4-7.5"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4h3l2.4 11h10.6l2-8H7"/><circle cx="9.5" cy="19.5" r="1.5"/><circle cx="17" cy="19.5" r="1.5"/></symbol>
+  <symbol id="i-growth" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20v-5M10 20v-8M15 20v-6M20 20v-10"/><path d="M4 10l6-4 4 3 6-6M16 3h4v4"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2a9.7 9.7 0 0 0-8.3 14.7L2.3 21.8l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.7c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.8 2c0 1.2.9 2.3 1 2.5.1.2 1.7 2.6 4.2 3.7 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.5-.2z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Mehmet Yıldırım Digital ana sayfa">
+      <img src="mark-sm.png" alt="MY logosu" width="62" height="37">
+      <span class="wm"><b>MEHMET YILDIRIM</b><small>DIGITAL</small></span>
+    </a>
+    <nav class="links" aria-label="Bölümler">
+      <a href="#web">Web Tasarım</a>
+      <a href="#sosyal">Sosyal Medya</a>
+      <a href="#meta">Meta Reklam</a>
+      <a href="#eticaret">E-Ticaret</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+    <a class="btn sm" href="#iletisim">Teklif Al</a>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <div class="hero">
+    <div>
+      <span class="script">Fikirden dijital gerçekliğe</span>
+      <h1>Markanızı <span class="b">dijitalde</span> büyütelim</h1>
+      <p class="lead"><strong>Markanıza özel, sonuç odaklı dijital çözümler.</strong> Web sitenizi kuruyor, sosyal medyanızı yönetiyor, Meta reklamlarınızla müşteri getiriyor ve ürünlerinizi tüm pazaryerlerinde tek panelden satışa açıyoruz.</p>
+      <div class="cta">
+        <a class="btn" href="#iletisim">İş birliği için yazın <svg><use href="#i-arrow"/></svg></a>
+        <a class="btn ghost" href="#hizmetler">Hizmetleri inceleyin</a>
+      </div>
+      <div class="tagline"><span>STRATEGY</span><i>•</i><span>GROWTH</span><i>•</i><span>REAL RESULTS</span></div>
+    </div>
+    <div class="reel">
+      <span class="note">Tanıtım filmimiz</span>
+      <div class="phone">
+        <video id="promo" src="promo.mp4" poster="poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Mehmet Yıldırım Digital tanıtım videosu"></video>
+        <button class="sound" id="sound" type="button" aria-label="Sesi aç">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z"/><path id="snd-x" d="M17 9l4 6M21 9l-4 6"/></svg>
+        </button>
+      </div>
+      <span class="note2">Markanız için<br>daha fazlası</span>
+    </div>
+  </div>
+
+  <nav class="rail" id="hizmetler" aria-label="Hizmetler">
+    <a href="#web"><span class="ic"><svg><use href="#i-web"/></svg></span>Web Sitesi<br>Tasarımı</a>
+    <a href="#sosyal"><span class="ic"><svg><use href="#i-social"/></svg></span>Sosyal Medya<br>Yönetimi</a>
+    <a href="#meta"><span class="ic"><svg><use href="#i-meta"/></svg></span>Meta Reklam<br>Yönetimi</a>
+    <a href="#eticaret"><span class="ic"><svg><use href="#i-cart"/></svg></span>E-Ticaret<br>Entegrasyonları</a>
+    <a href="#strateji"><span class="ic"><svg><use href="#i-growth"/></svg></span>Dijital Strateji<br>&amp; Büyüme</a>
+  </nav>
+
+  <section aria-labelledby="h-hiz">
+    <div class="head center">
+      <span class="kicker both">Hizmetlerimiz</span>
+      <h2 id="h-hiz">Dijitaldeki her adımınız tek ekipte</h2>
+      <p>İşinizi dijitalde büyütmek için gereken her şey: güçlü bir site, düzenli bir sosyal medya, doğru hedeflenmiş reklamlar ve pazaryerlerinde satış.</p>
+    </div>
+
+    <article class="feature" id="web">
+      <div class="shot"><img src="f6.jpg" alt="Web sitesi tasarımı çalışması" loading="lazy"><span class="badge"><span class="ic"><svg><use href="#i-web"/></svg></span>Web Sitesi</span></div>
+      <div class="copy">
+        <span class="script">Modern · Hızlı · Mobil uyumlu</span>
+        <h3>Web sitesi <span>tasarımı</span></h3>
+        <p>Markanıza dijital güç katan, hızlı açılan ve her ekranda kusursuz görünen siteler. İçeriği kendiniz güncelleyebileceğiniz yönetim paneliyle teslim ediyoruz.</p>
+        <ul class="checks"><li>Kurumsal siteler</li><li>Mobil uyumlu</li><li>SEO dostu</li><li>Modern tasarım</li><li>Yönetim paneli</li><li>E-ticaret siteleri</li></ul>
+      </div>
+    </article>
+
+    <article class="feature flip" id="sosyal">
+      <div class="shot"><img src="f12.jpg" alt="Sosyal medya yönetimi çalışması" loading="lazy"><span class="badge"><span class="ic"><svg><use href="#i-social"/></svg></span>Sosyal Medya</span></div>
+      <div class="copy">
+        <span class="script">Sosyal medyada markanızı güçlendirin</span>
+        <h3>Sosyal medya <span>yönetimi</span></h3>
+        <p>Instagram, Facebook ve TikTok hesaplarınız için içerik takvimi, gönderi ve hikâye tasarımları, paylaşım planı ve takipçi etkileşimi.</p>
+        <ul class="checks"><li>Strateji planlama</li><li>İçerik üretimi</li><li>Profesyonel yönetim</li><li>Etkileşim ve büyüme</li></ul>
+      </div>
+    </article>
+
+    <article class="feature" id="meta">
+      <div class="shot"><img src="f18.jpg" alt="Meta reklam yönetimi çalışması" loading="lazy"><span class="badge"><span class="ic"><svg><use href="#i-meta"/></svg></span>Meta Ads</span></div>
+      <div class="copy">
+        <span class="script">Reklamlarla daha fazla müşteri</span>
+        <h3>Meta reklam <span>yönetimi</span></h3>
+        <p>Facebook ve Instagram reklamlarınızı hedef, analiz, strateji ve sonuç adımlarıyla kuruyoruz. Bütçenizin nereye gittiğini ve ne getirdiğini raporlarla görürsünüz.</p>
+        <ul class="checks"><li>Doğru hedef kitle</li><li>Etkili reklam stratejisi</li><li>Daha fazla dönüşüm</li><li>Ölçülebilir sonuçlar</li></ul>
+      </div>
+    </article>
+
+    <article class="feature flip" id="eticaret">
+      <div class="shot"><img src="f24.jpg" alt="E-ticaret pazaryeri entegrasyon paneli" loading="lazy"><span class="badge"><span class="ic"><svg><use href="#i-cart"/></svg></span>E-Ticaret</span></div>
+      <div class="copy">
+        <span class="script">E-ticarette sınırları aşın</span>
+        <h3>E-ticaret <span>entegrasyonları</span></h3>
+        <p>Tüm pazaryerleri tek panelde. Ürünleriniz, stoklarınız ve siparişleriniz otomatik senkronize olur; siz satışa odaklanırsınız.</p>
+        <div class="markets" aria-label="Pazaryerleri"><span>trendyol</span><span>hepsiburada</span><span>n11</span><span>idefix</span><span>pazarama</span></div>
+        <ul class="checks"><li>Ürün yönetimi</li><li>Sipariş takibi</li><li>Stok senkronizasyonu</li><li>Raporlama</li></ul>
+      </div>
+    </article>
+  </section>
+
+  <section id="strateji" style="padding-top:24px">
+    <div class="band">
+      <div>
+        <span class="kicker">Dijital strateji &amp; büyüme</span>
+        <h2>Veriye dayalı, sonuç odaklı büyüme</h2>
+        <p>Web, sosyal medya, reklam ve pazaryeri kanallarınızı tek bir plan altında topluyoruz. Hangi kanalın satış getirdiğini ölçüp bütçeyi oraya yönlendiriyoruz.</p>
+      </div>
+      <div class="benefits">
+        <div><b>Güvenli entegrasyon</b><span>Mağaza ve ürün verileriniz korunur.</span></div>
+        <div><b>Zaman tasarrufu</b><span>Tek panelden tüm kanallar.</span></div>
+        <div><b>Daha fazla satış</b><span>Doğru kanala doğru bütçe.</span></div>
+        <div><b>Profesyonel destek</b><span>Her adımda yanınızdayız.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-surec">
+    <div class="head">
+      <span class="kicker">Çalışma sürecimiz</span>
+      <h2 id="h-surec">Stratejiden başarıya beş adım</h2>
+    </div>
+    <div class="flow">
+      <div><b>Strateji</b><p>Markanızı, rakiplerinizi ve hedef kitlenizi analiz edip yol haritası çıkarırız.</p></div>
+      <div><b>Tasarım</b><p>Site, sosyal medya ve reklam görsellerini markanıza özel hazırlarız.</p></div>
+      <div><b>Reklam</b><p>Meta reklamlarını doğru kitleye ve doğru bütçeyle yayına alırız.</p></div>
+      <div><b>Dönüşüm</b><p>Ziyaretçiyi müşteriye çeviren sayfaları ve kampanyaları iyileştiririz.</p></div>
+      <div><b>Başarı</b><p>Sonuçları raporlar, işe yarayanı büyütmeye devam ederiz.</p></div>
+    </div>
+  </section>
+
+  <section id="iletisim" aria-labelledby="h-ile">
+    <div class="head">
+      <span class="kicker">İletişim</span>
+      <h2 id="h-ile">İş birlikleri için bize ulaşın</h2>
+      <p>Arayın, WhatsApp'tan yazın ya da formu doldurun. Formdaki bilgiler WhatsApp mesajına dönüşür, tek dokunuşla gönderirsiniz.</p>
+    </div>
+    <div class="contact">
+      <div class="call">
+        <span class="lbl">İŞ BİRLİKLERİ İÇİN</span>
+        <div class="num" id="phone">0552 410 30 09</div>
+        <p>Daha fazla müşteri, daha güçlü marka. Projenizi konuşmak için doğrudan ulaşın.</p>
+        <div class="row">
+          <a class="btn" href="https://wa.me/905524103009" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
+          <a class="btn ghost" href="tel:+905524103009"><svg><use href="#i-phone"/></svg>Ara</a>
+          <button class="btn ghost" id="copy" type="button">Numarayı kopyala</button>
+        </div>
+      </div>
+      <form class="form" id="form" novalidate>
+        <h3>Teklif isteyin</h3>
+        <div class="two">
+          <label for="f-name">Adınız<input id="f-name" name="name" placeholder="Ad Soyad" autocomplete="name"></label>
+          <label for="f-biz">İşletme adı<input id="f-biz" name="biz" placeholder="Markanız"></label>
+        </div>
+        <label for="f-svc">İlgilendiğiniz hizmet
+          <select id="f-svc" name="svc">
+            <option>Web Sitesi Tasarımı</option>
+            <option>Sosyal Medya Yönetimi</option>
+            <option>Meta Reklam Yönetimi</option>
+            <option>E-Ticaret Entegrasyonları</option>
+            <option>Dijital Strateji &amp; Büyüme</option>
+            <option>Birden fazla hizmet</option>
+          </select>
+        </label>
+        <label for="f-msg">Projenizi kısaca anlatın<textarea id="f-msg" name="msg" placeholder="Örn. Mağazam için web sitesi ve Trendyol entegrasyonu istiyorum."></textarea></label>
+        <button class="btn" type="submit">Mesajı hazırla <svg><use href="#i-arrow"/></svg></button>
+        <div class="result" id="result" hidden></div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <img class="logo" src="logo-circle.jpg" alt="Mehmet Yıldırım Digital logosu" width="120" height="120" loading="lazy">
+    <div class="info">
+      <b>MEHMET YILDIRIM DIGITAL</b>
+      <span>Web Tasarım · Sosyal Medya · Meta Reklam · E-Ticaret Entegrasyonu · Dijital Strateji</span>
+      <span>İş birlikleri: 0552 410 30 09 · © 2026</span>
+    </div>
+    <span class="script">Markanız için daha fazlası</span>
+  </footer>
+</main>
+
+<a class="wa-float" href="https://wa.me/905524103009" target="_blank" rel="noopener" aria-label="WhatsApp ile yazın"><svg><use href="#i-wa"/></svg></a>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const toast = (t) => { const el = $('toast'); el.textContent = t; el.hidden = false; clearTimeout(el._t); el._t = setTimeout(() => el.hidden = true, 2200); };
+
+const v = $('promo'), s = $('sound');
+s.addEventListener('click', () => {
+  v.muted = !v.muted;
+  if (!v.muted) { v.currentTime = 0; v.play().catch(() => {}); }
+  $('snd-x').setAttribute('d', v.muted ? 'M17 9l4 6M21 9l-4 6' : 'M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12');
+  s.setAttribute('aria-label', v.muted ? 'Sesi aç' : 'Sesi kapat');
+});
+
+$('copy').addEventListener('click', () => {
+  const fallback = () => { const r = document.createRange(); r.selectNodeContents($('phone')); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); toast('Numara seçildi'); };
+  try { navigator.clipboard.writeText('0552 410 30 09').then(() => toast('Numara kopyalandı'), fallback); } catch (e) { fallback(); }
+});
+
+$('form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const f = e.target, name = f.name.value.trim(), res = $('result');
+  res.hidden = false; res.innerHTML = '';
+  if (!name) { res.textContent = 'Mesajı hazırlamak için adınızı yazın.'; f.name.focus(); return; }
+  const biz = f.biz.value.trim(), msg = f.msg.value.trim();
+  const text = `Merhaba, ben ${name}${biz ? ' (' + biz + ')' : ''}. ${f.svc.value} hizmeti hakkında bilgi almak istiyorum.${msg ? ' ' + msg : ''}`;
+  const p = document.createElement('p'); p.className = 'msg'; p.textContent = '“' + text + '”';
+  const a = document.createElement('a'); a.className = 'btn'; a.href = 'https://wa.me/905524103009?text=' + encodeURIComponent(text); a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'WhatsApp ile gönder';
+  res.append(p, a);
+});
+</script>
+
+</body>
+</html>
