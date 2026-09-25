@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rabia Aliefendioğlu Hair — Örnek Tasarım</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+:root{
+  --cream:#F7F2EA; --paper:#FFFDF9; --sand:#EDE3D3; --line:#E1D4BF;
+  --ink:#1B1712; --muted:#6E6356; --gold:#B08A4E; --gold-2:#D4B27A; --black:#141110;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:400 16px/1.65 var(--sans);overflow-x:clip}
+a{color:inherit}
+img{max-width:100%}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;line-height:1.05;text-wrap:balance}
+p{margin:0}
+.eyebrow{font:500 12px/1 var(--sans);letter-spacing:.34em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:30px;height:1px;background:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;cursor:pointer;text-decoration:none;font:500 14px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:16px 26px;border-radius:2px;background:var(--black);color:#F7F2EA;transition:background .2s,transform .2s}
+.btn:hover{background:#2c251d}
+.btn.gold{background:var(--gold);color:#fff}
+.btn.gold:hover{background:#9a7641}
+.btn.line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.btn.line:hover{background:var(--ink);color:var(--cream)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* demo banner */
+.demo{background:var(--black);color:#d9cbb3;text-align:center;font-size:12.5px;letter-spacing:.06em;padding:8px 16px}
+.demo b{color:var(--gold-2);font-weight:500}
+
+/* header */
+header{position:sticky;top:0;z-index:40;background:rgba(247,242,234,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;height:76px}
+.logo{text-decoration:none;display:grid;line-height:1}
+.logo b{font:600 26px/1 var(--serif);letter-spacing:.02em}
+.logo small{font:500 9.5px/1 var(--sans);letter-spacing:.5em;color:var(--gold);margin-top:6px}
+.menu{display:flex;gap:30px;font-size:13.5px;letter-spacing:.14em;text-transform:uppercase}
+.menu a{text-decoration:none;color:var(--muted)}
+.menu a:hover{color:var(--ink)}
+.navr{display:flex;align-items:center;gap:14px}
+.lang{display:flex;border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.lang button{border:0;background:transparent;font:500 12px/1 var(--sans);padding:9px 11px;cursor:pointer;color:var(--muted);letter-spacing:.1em}
+.lang button.on{background:var(--ink);color:var(--cream)}
+.cartbtn{position:relative;border:1px solid var(--ink);background:transparent;width:44px;height:44px;display:grid;place-items:center;cursor:pointer;border-radius:2px}
+.cartbtn svg{width:20px;height:20px}
+.cartbtn span{position:absolute;top:-7px;right:-7px;background:var(--gold);color:#fff;font:600 11px/1 var(--sans);min-width:20px;height:20px;border-radius:10px;display:grid;place-items:center;padding:0 5px}
+@media (max-width:920px){.menu{display:none}}
+
+/* hero */
+.hero{position:relative;display:grid;grid-template-columns:1.05fr .95fr;min-height:0}
+.hero-copy{padding:80px 20px 80px max(20px,calc((100vw - 1180px)/2 + 20px));display:flex;flex-direction:column;justify-content:center;gap:24px}
+.hero h1{font-size:clamp(46px,6.4vw,92px);font-weight:500;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero p.lead{font-size:18px;color:var(--muted);max-width:46ch;font-weight:300}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.hero-facts{display:flex;flex-wrap:wrap;gap:28px;margin-top:18px;padding-top:24px;border-top:1px solid var(--line)}
+.hero-facts div{display:grid;gap:4px}
+.hero-facts b{font:600 30px/1 var(--serif)}
+.hero-facts span{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.hero-art{position:relative;min-height:560px;background:var(--black);overflow:hidden}
+.strands{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero-card{position:absolute;left:40px;bottom:40px;right:40px;background:rgba(20,17,16,.72);backdrop-filter:blur(6px);border:1px solid rgba(212,178,122,.35);padding:22px 24px;color:#efe4d2;display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap}
+.hero-card b{font:500 24px/1.1 var(--serif);color:#fff}
+.hero-card small{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-2);margin-bottom:6px}
+@media (max-width:900px){.hero{grid-template-columns:1fr}.hero-copy{padding:56px 20px}.hero-art{min-height:380px}}
+
+/* marquee */
+.ticker{background:var(--black);color:var(--gold-2);overflow:hidden;white-space:nowrap;border-block:1px solid #2a231b}
+.ticker div{display:inline-block;padding:14px 0;animation:tick 40s linear infinite;font:500 13px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase}
+.ticker i{font-style:normal;margin:0 26px;color:#6f5b3c}
+@keyframes tick{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker div{animation:none}}
+
+section{padding-block:96px}
+.head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:46px}
+.head h2{font-size:clamp(38px,5vw,64px);font-weight:500;margin-top:16px}
+.head p{color:var(--muted);max-width:48ch;font-weight:300}
+
+/* products */
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.prod{background:var(--paper);border:1px solid var(--line);display:flex;flex-direction:column;cursor:pointer;transition:border-color .2s,transform .2s;text-align:left;font:inherit;color:inherit;padding:0}
+.prod:hover{border-color:var(--gold);transform:translateY(-3px)}
+.prod.on{border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
+.prod .sw{height:180px;position:relative}
+.prod .tag{position:absolute;top:14px;left:14px;background:var(--paper);font:500 11px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;padding:7px 10px}
+.prod .body{padding:22px;display:grid;gap:8px}
+.prod h3{font-size:28px;font-weight:600}
+.prod p{font-size:14px;color:var(--muted)}
+.prod .from{margin-top:8px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.prod .from b{font:600 26px/1 var(--serif);color:var(--gold);letter-spacing:0;margin-left:6px}
+@media (max-width:980px){.products{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.products{grid-template-columns:1fr}}
+
+/* configurator */
+.config{margin-top:28px;display:grid;grid-template-columns:1.2fr .8fr;gap:0;background:var(--paper);border:1px solid var(--line)}
+.cfg-l{padding:34px;display:grid;gap:26px;border-right:1px solid var(--line)}
+.cfg-r{padding:34px;background:var(--sand);display:flex;flex-direction:column;gap:18px}
+.grp label.t{display:block;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opt{border:1px solid var(--line);background:var(--cream);padding:12px 16px;cursor:pointer;font:400 14px/1 var(--sans);display:inline-flex;align-items:center;gap:10px;border-radius:2px;color:var(--ink)}
+.opt .dot{width:20px;height:20px;border-radius:50%;border:1px solid rgba(0,0,0,.1)}
+.opt.on{border-color:var(--ink);background:var(--ink);color:var(--cream)}
+.opt:disabled{opacity:.35;cursor:not-allowed}
+.qty{display:flex;align-items:center;gap:0;border:1px solid var(--ink);width:max-content}
+.qty button{width:46px;height:46px;border:0;background:transparent;font-size:20px;cursor:pointer}
+.qty input{width:70px;height:46px;border:0;border-inline:1px solid var(--ink);text-align:center;font:500 18px var(--sans);background:transparent;color:var(--ink)}
+.hint{font-size:13px;color:var(--muted);margin-top:10px}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.tiers div{border:1px solid var(--line);padding:10px;text-align:center;font-size:12px;letter-spacing:.08em;color:var(--muted);background:var(--cream)}
+.tiers div b{display:block;font:600 20px/1.2 var(--serif);color:var(--ink);letter-spacing:0}
+.tiers div.on{border-color:var(--gold);background:#fff}
+.tiers div.on b{color:var(--gold)}
+.sum-row{display:flex;justify-content:space-between;gap:12px;font-size:14px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.sum-row span:first-child{color:var(--muted);letter-spacing:.06em}
+.total{margin-top:auto;display:grid;gap:4px}
+.total small{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.total b{font:600 54px/1 var(--serif);font-variant-numeric:tabular-nums}
+.total em{font-style:normal;font-size:13px;color:var(--muted)}
+@media (max-width:860px){.config{grid-template-columns:1fr}.cfg-l{border-right:0;border-bottom:1px solid var(--line)}}
+@media (max-width:480px){.cfg-l,.cfg-r{padding:22px}}
+
+/* wholesale strip */
+.perks{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-block:1px solid var(--line);margin-top:56px}
+.perks div{padding:26px 22px;display:grid;gap:6px;border-right:1px solid var(--line)}
+.perks div:last-child{border-right:0}
+.perks b{font:600 22px/1.1 var(--serif)}
+.perks span{font-size:14px;color:var(--muted)}
+@media (max-width:820px){.perks{grid-template-columns:1fr 1fr}.perks div:nth-child(2){border-right:0}.perks div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
+/* salon / booking */
+.salon{background:var(--black);color:#EFE4D2}
+.salon .head p{color:#b6a891}
+.salon .eyebrow{color:var(--gold-2)}
+.salon .eyebrow::before{background:var(--gold-2)}
+.book{display:grid;grid-template-columns:.9fr 1.1fr;gap:26px}
+.svc{display:grid;gap:12px}
+.svcb{display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;background:#1d1915;border:1px solid #33291f;padding:20px 22px;color:#EFE4D2;cursor:pointer;font:inherit;transition:border-color .2s}
+.svcb:hover{border-color:#6f5b3c}
+.svcb.on{border-color:var(--gold-2);background:#241e17}
+.svcb b{display:block;font:500 24px/1.15 var(--serif);color:#fff}
+.svcb span{font-size:13.5px;color:#a99a82}
+.svcb em{font-style:normal;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2);white-space:nowrap}
+.cal{background:#1d1915;border:1px solid #33291f;padding:26px;display:grid;gap:20px}
+.cal-h{display:flex;justify-content:space-between;align-items:center}
+.cal-h b{font:500 26px/1 var(--serif);color:#fff}
+.cal-h button{background:transparent;border:1px solid #4a3d2e;color:#EFE4D2;width:38px;height:38px;cursor:pointer}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center}
+.days .dn{font-size:11px;letter-spacing:.16em;color:#8d7f69;padding-bottom:4px}
+.day{aspect-ratio:1;max-width:100%;border:1px solid transparent;background:#241e17;color:#EFE4D2;font:500 15px var(--sans);cursor:pointer}
+.day:hover:not(:disabled){border-color:#6f5b3c}
+.day.on{background:var(--gold);color:#fff}
+.day:disabled{background:transparent;color:#4d4337;cursor:not-allowed}
+.slots{display:flex;flex-wrap:wrap;gap:8px}
+.slot{border:1px solid #4a3d2e;background:transparent;color:#EFE4D2;padding:10px 14px;font:500 14px var(--sans);cursor:pointer;font-variant-numeric:tabular-nums}
+.slot.on{background:#EFE4D2;color:var(--black);border-color:#EFE4D2}
+.slot:disabled{text-decoration:line-through;color:#5a4e40;border-color:#2e261d;cursor:not-allowed}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fields input{width:100%;background:#141110;border:1px solid #4a3d2e;color:#EFE4D2;padding:13px 14px;font:400 15px var(--sans)}
+.fields input::placeholder{color:#7d6f5a}
+.fields input:focus{outline:none;border-color:var(--gold-2)}
+.okmsg{background:#241e17;border:1px solid var(--gold-2);padding:16px;font-size:14.5px;color:#EFE4D2}
+.okmsg b{color:var(--gold-2)}
+.muted-s{font-size:12.5px;color:#8d7f69}
+@media (max-width:900px){.book{grid-template-columns:1fr}}
+@media (max-width:440px){.fields{grid-template-columns:1fr}.cal{padding:18px}}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about .quote{font:italic 500 clamp(28px,3.4vw,42px)/1.2 var(--serif)}
+.about p{color:var(--muted);font-weight:300;margin-top:18px;max-width:52ch}
+.steps{display:grid;gap:0;border-top:1px solid var(--line)}
+.steps>div{display:grid;grid-template-columns:56px 1fr;gap:10px;padding:20px 0;border-bottom:1px solid var(--line)}
+.steps i{font:600 30px/1 var(--serif);font-style:normal;color:var(--gold)}
+.steps b{font:600 22px/1.2 var(--serif);display:block}
+.steps span{font-size:14.5px;color:var(--muted)}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:30px}}
+
+/* contact */
+.contact{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.contact div{background:var(--paper);border:1px solid var(--line);padding:28px;display:grid;gap:8px}
+.contact small{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.contact b{font:600 24px/1.2 var(--serif)}
+.contact span{color:var(--muted);font-size:14.5px}
+@media (max-width:820px){.contact{grid-template-columns:1fr}}
+
+footer{background:var(--black);color:#a99a82;padding-block:40px;font-size:13.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer .logo b{color:#EFE4D2}
+
+/* drawer */
+.overlay{position:fixed;inset:0;background:rgba(20,17,16,.5);z-index:60}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--paper);z-index:61;display:flex;flex-direction:column;box-shadow:-20px 0 60px rgba(0,0,0,.2)}
+.dr-h{display:flex;justify-content:space-between;align-items:center;padding:22px 24px;border-bottom:1px solid var(--line)}
+.dr-h b{font:600 28px/1 var(--serif)}
+.dr-h button{border:0;background:transparent;font-size:28px;cursor:pointer;line-height:1}
+.dr-b{flex:1;overflow:auto;padding:10px 24px;display:grid;align-content:start;gap:0}
+.item{display:grid;grid-template-columns:52px 1fr auto;gap:14px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.item .s{width:52px;height:52px}
+.item b{font:600 19px/1.1 var(--serif);display:block}
+.item span{font-size:13px;color:var(--muted)}
+.item .p{text-align:right;font:600 20px var(--serif);font-variant-numeric:tabular-nums}
+.item .p button{display:block;margin-left:auto;border:0;background:transparent;color:var(--muted);font-size:12px;text-decoration:underline;cursor:pointer;font-family:var(--sans)}
+.dr-f{padding:22px 24px;border-top:1px solid var(--line);display:grid;gap:14px}
+.ofields{display:grid;gap:8px}.ofields input{width:100%;border:1px solid var(--line);background:#fff;padding:11px 12px;font:400 15px var(--sans)}.ofields input:focus{outline:none;border-color:var(--gold)}
+.dr-f .t{display:flex;justify-content:space-between;font:600 26px var(--serif)}
+.pay{display:flex;gap:8px;flex-wrap:wrap;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.pay span{border:1px solid var(--line);padding:6px 9px}
+.empty{padding:40px 0;text-align:center;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--cream);padding:13px 20px;font-size:14px;z-index:80;letter-spacing:.04em}
+.wa{position:fixed;right:18px;bottom:18px;z-index:50;width:56px;height:56px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 26px -8px rgba(37,211,102,.7)}
+.wa svg{width:28px;height:28px;fill:#fff}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+
+<div class="demo"><b data-i="demo1">ÖRNEK TASARIM</b> · <span data-i="demo2">Müşteri sunumu içindir. Fiyatlar örnek olarak alınmıştır, ödeme ve randevu gerçek işlem yapmaz.</span></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top"><b>Rabia Aliefendioğlu</b><small>HAIR · ISTANBUL</small></a>
+    <nav class="menu">
+      <a href="#urunler" data-i="m1">Ürünler</a>
+      <a href="#randevu" data-i="m2">Randevu</a>
+      <a href="#hakkimizda" data-i="m3">Hakkımızda</a>
+      <a href="#iletisim" data-i="m4">İletişim</a>
+    </nav>
+    <div class="navr">
+      <div class="lang"><button id="lTR" class="on" type="button">TR</button><button id="lEN" type="button">EN</button></div>
+      <button class="cartbtn" id="openCart" type="button" aria-label="Sepet">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow" data-i="h0">%100 Gerçek İnsan Saçı</span>
+      <h1 data-i="h1" data-html>Saçınızda <em>doğal</em> güzellik, dünyaya kapımızdan</h1>
+      <p class="lead" data-i="h2">Premium kaynak saçları dünyanın her yerine gönderiyoruz. Bahçelievler salonumuzda ise uzman ekibimizle kaynak uygulamasını yapıyoruz.</p>
+      <div class="cta">
+        <a class="btn" href="#urunler" data-i="h3">Saç Satın Al</a>
+        <a class="btn line" href="#randevu" data-i="h4">Randevu Al</a>
+      </div>
+      <div class="hero-facts">
+        <div><b>%100</b><span data-i="f1">İnsan saçı</span></div>
+        <div><b>3</b><span data-i="f2">Günde kargo</span></div>
+        <div><b>12,2B</b><span data-i="f3">Instagram takipçi</span></div><div><b>🇳🇱 🇩🇪 🇬🇧 🇨🇦</b><span data-i="f4">Müşteri ülkeleri</span></div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <canvas class="strands" id="strands" aria-hidden="true"></canvas>
+      <div class="hero-card">
+        <div><small data-i="hc1">Bahçelievler Salon</small><b data-i="hc2">Needle, Butterfly & Mikro kaynak uygulaması</b></div>
+        <a class="btn gold" href="#randevu" data-i="h4">Randevu Al</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker"><div>
+    <span data-i="t1">Worldwide Shipping</span><i>✦</i><span>Genius Weft</span><i>✦</i><span>Butterfly Weft</span><i>✦</i><span>Super Double</span><i>✦</i><span data-i="t2">Toptan Fiyat Avantajı</span><i>✦</i><span data-i="t1">Worldwide Shipping</span><i>✦</i><span>Genius Weft</span><i>✦</i><span>Butterfly Weft</span><i>✦</i><span>Super Double</span><i>✦</i><span data-i="t2">Toptan Fiyat Avantajı</span><i>✦</i>
+  </div></div>
+
+  <!-- PRODUCTS -->
+  <section id="urunler">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="eyebrow" data-i="p0">Koleksiyon</span><h2 data-i="p1">Saçınızı seçin, fiyatı anında görün</h2></div>
+        <p data-i="p2">Ürün, renk, uzunluk ve kilogram seçin. Alacağınız miktar arttıkça kilogram fiyatı otomatik düşer.</p>
+      </div>
+      <div class="products" id="products"></div>
+
+      <div class="config" id="config">
+        <div class="cfg-l">
+          <div class="grp"><label class="t" data-i="c1">Renk</label><div class="opts" id="optColor"></div></div>
+          <div class="grp" id="grpLen"><label class="t" data-i="c2">Uzunluk</label><div class="opts" id="optLen"></div></div>
+          <div class="grp">
+            <label class="t" data-i="c3">Miktar (kg)</label>
+            <div class="qty"><button type="button" id="qm">−</button><input id="qty" type="number" min="1" max="100" value="1" aria-label="kg"><button type="button" id="qp">+</button></div>
+            <div class="tiers" id="tiers"></div>
+          </div>
+        </div>
+        <div class="cfg-r">
+          <div class="sum-row"><span data-i="s1">Ürün</span><span id="sProd"></span></div>
+          <div class="sum-row"><span data-i="c1">Renk</span><span id="sColor"></span></div>
+          <div class="sum-row" id="sLenRow"><span data-i="c2">Uzunluk</span><span id="sLen"></span></div>
+          <div class="sum-row"><span data-i="s2">Kg fiyatı</span><span id="sUnit"></span></div>
+          <div class="total"><small data-i="s3">Toplam</small><b id="sTotal">€0</b><em data-i="s4">Kargo ve gümrük ülkeye göre hesaplanır.</em></div>
+          <button class="btn" id="addCart" type="button" data-i="s5">Sepete Ekle</button>
+          <a class="btn line" id="waQuote" href="https://wa.me/message/E7EIR5EP27XEJ1" target="_blank" rel="noopener" data-i="s6">WhatsApp'tan Teklif Al</a>
+        </div>
+      </div>
+
+      <div class="perks">
+        <div><b data-i="k1">Premium kalite</b><span data-i="k1s">Kalın ve dolgun uçlar</span></div>
+        <div><b data-i="k2">Uzun ömürlü</b><span data-i="k2s">Doğru bakımla yıllarca kullanım</span></div>
+        <div><b data-i="k3">3 günde kargo</b><span data-i="k3s">Dünyanın her yerine</span></div>
+        <div><b data-i="k4">Güvenli paket</b><span data-i="k4s">Sigortalı ve özenli teslimat</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="salon" id="randevu">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="eyebrow" data-i="b0">Bahçelievler Salon</span><h2 data-i="b1">Online randevu alın</h2></div>
+        <p data-i="b2">Hizmeti, günü ve saati seçin. Randevunuz saniyeler içinde oluşsun, size SMS ve WhatsApp ile hatırlatalım.</p>
+      </div>
+      <div class="book">
+        <div class="svc" id="svc"></div>
+        <div class="cal">
+          <div class="cal-h"><button type="button" id="pm" aria-label="Önceki ay">‹</button><b id="mon"></b><button type="button" id="nm" aria-label="Sonraki ay">›</button></div>
+          <div class="days" id="days"></div>
+          <div><div class="muted-s" style="margin-bottom:10px" id="slotTitle"></div><div class="slots" id="slots"></div></div>
+          <form id="bform" novalidate>
+            <div class="fields">
+              <input id="bn" placeholder="Ad Soyad" data-ph="n" autocomplete="name">
+              <input id="bt" placeholder="Telefon" data-ph="t" inputmode="tel" autocomplete="tel">
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:12px">
+              <button class="btn gold" type="submit" id="bsub" data-i="b3">Randevuyu Onayla</button>
+              <span class="muted-s" id="bsum"></span>
+            </div>
+          </form>
+          <div class="okmsg" id="bok" hidden></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="hakkimizda">
+    <div class="wrap about">
+      <div>
+        <span class="eyebrow" data-i="a0">Hakkımızda</span>
+        <p class="quote" style="margin-top:18px" data-i="a1">“Her müşterimize kendi saçı gibi doğal duran, uzun ömürlü bir sonuç sunuyoruz.”</p>
+        <p data-i="a2">İstanbul Bahçelievler'deki salonumuzda saç uygulaması yapıyor, %100 gerçek insan saçını toptan ve perakende olarak dünyanın dört bir yanına gönderiyoruz.</p>
+      </div>
+      <div class="steps">
+        <div><i>01</i><div><b data-i="st1">Ücretsiz saç analizi</b><span data-i="st1s">Saç yapınıza uygun ürün ve yöntemi birlikte seçelim.</span></div></div>
+        <div><i>02</i><div><b data-i="st2">Renk eşleştirme</b><span data-i="st2s">Kendi renginize birebir uyan tonu belirleyelim.</span></div></div>
+        <div><i>03</i><div><b data-i="st3">Uygulama</b><span data-i="st3s">Uzman ekibimiz kaynağı titizlikle uygulasın.</span></div></div>
+        <div><i>04</i><div><b data-i="st4">Bakım & takip</b><span data-i="st4s">Bakım randevularıyla saçınız ilk günkü gibi kalsın.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="iletisim" style="padding-top:0">
+    <div class="wrap contact">
+      <div><small data-i="ct1">Salon</small><b>Bahçelievler, İstanbul</b><span data-i="ct1s">Adres bilgisi eklenecek</span></div>
+      <div><small>WhatsApp</small><b>+90 538 415 80 53</b><span data-i="ct2s">Sipariş ve randevu için yazın</span></div>
+      <div><small>Instagram</small><b>@rabia.aliefendioglu</b><span data-i="ct3s">Uygulama örnekleri ve yorumlar</span></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#top"><b>Rabia Aliefendioğlu</b><small>HAIR · ISTANBUL</small></a>
+    <span data-i="ft">Tasarım: Mehmet Yıldırım Digital · Örnek sunum</span> <a href="panel.html" style="opacity:.5;font-size:12px;margin-left:10px">Yönetim</a>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/message/E7EIR5EP27XEJ1" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2.2a9.7 9.7 0 0 0-8.3 14.7L2.3 21.8l5-1.3A9.7 9.7 0 1 0 12 2.2zm4.4 11.7c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.8 2c0 1.2.9 2.3 1 2.5.1.2 1.7 2.6 4.2 3.7 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1z"/></svg></a>
+
+<div class="overlay" id="ov" hidden></div>
+<aside class="drawer" id="dr" hidden aria-label="Sepet">
+  <div class="dr-h"><b data-i="d1">Sepetim</b><button type="button" id="closeCart" aria-label="Kapat">×</button></div>
+  <div class="dr-b" id="items"></div>
+  <div class="dr-f">
+    <div class="t"><span data-i="s3">Toplam</span><span id="dTotal">€0</span></div>
+    <div class="ofields"><input id="oName" data-ph="on" placeholder="Ad Soyad" autocomplete="name"><input id="oPhone" data-ph="op" placeholder="Telefon / WhatsApp" inputmode="tel" autocomplete="tel"><input id="oCountry" data-ph="oc" placeholder="Ülke / Şehir" autocomplete="country-name"></div>
+    <button class="btn" id="checkout" type="button" data-i="d2">Sipariş Talebi Gönder</button>
+    <div class="pay"><span>iyzico</span><span>Visa</span><span>Mastercard</span><span>Troy</span><span data-i="d3">Havale/EFT</span></div>
+  </div>
+</aside>
+<div class="toast" id="toast" hidden></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+/* Rabia Aliefendioğlu — canlı veri katmanı (Firebase Firestore) */
+firebase.initializeApp({apiKey:"AIzaSyCxpn3sjiIrhdqzaiFMHHJ0DSRgypyuEG0",authDomain:"rabia-aliefendioglu.firebaseapp.com",projectId:"rabia-aliefendioglu",storageBucket:"rabia-aliefendioglu.firebasestorage.app",messagingSenderId:"627472096954",appId:"1:627472096954:web:0121b6945e4822f110ac83"});
+const RA=(function(){
+  const db=firebase.firestore();
+  const ts=()=>firebase.firestore.FieldValue.serverTimestamp();
+  const ymd=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+  const phone=p=>{p=String(p||"").replace(/\D/g,"");if(p.startsWith("0"))p="9"+p;else if(p.length===10)p="90"+p;return p.slice(0,20)};
+  return {db,ymd,phone,T:{},
+    S:{times:["10:00","11:00","12:00","13:30","14:30","15:30","16:30","17:30","18:30"],closedWeekdays:[0],closed:[]},
+    async loadSettings(){try{const d=await db.doc("settings/main").get();if(d.exists)Object.assign(this.S,d.data())}catch(e){}},
+    async taken(date){
+      const id=firebase.firestore.FieldPath.documentId();
+      const q=await db.collection("slots").where(id,">=",date+"_").where(id,"<",date+"_~").get();
+      return q.docs.map(d=>d.id.split("_")[1]);
+    },
+    async book(b){
+      const ref=db.collection("bookings").doc(),slot=b.date+"_"+b.time,batch=db.batch();
+      batch.set(ref,{name:b.name.slice(0,80),phone:phone(b.phone),svc:b.svc,date:b.date,time:b.time,status:"bekliyor",note:(b.note||"").slice(0,300),src:"site",slot,created:ts()});
+      batch.set(db.doc("slots/"+slot),{b:ref.id});
+      await batch.commit();
+    },
+    async order(o){
+      await db.collection("orders").add({name:o.name.slice(0,80),phone:phone(o.phone),country:(o.country||"").slice(0,60),note:(o.note||"").slice(0,300),items:o.items,total:o.total,status:"yeni",cargo:"",src:"site",created:ts()});
+    }
+  };
+})();
+
+</script>
+<script>
+const COLORS = {
+  bb:{tr:"Siyah & Kahve",en:"Black & Brown",g:"linear-gradient(135deg,#0d0a08,#3a2519 60%,#1a120d)"},
+  bl:{tr:"Sarı & Karışık",en:"Blonde & Mixed",g:"linear-gradient(135deg,#caa46e,#e8cc9a 55%,#b88c55)"},
+  om:{tr:"Ombre",en:"Ombré",g:"linear-gradient(135deg,#150f0b 0%,#4a3020 45%,#d2ae78 100%)"}
+};
+// price[color][len] = [1-5kg, 5-10kg, 10+kg]
+const P = {
+  genius:{name:"Genius Weft",tag:{tr:"Görünmez bağlantı",en:"Invisible seam"},d:{tr:"İnce, düz bağlantı ile en doğal görünüm.",en:"Ultra-flat weft for the most natural look."},lens:null,
+    price:{bb:{x:[1100,1100,1100]},bl:{x:[1200,1200,1200]},om:{x:[1250,1250,1250]}}},
+  butterfly:{name:"Butterfly Weft",tag:{tr:"Hafif & esnek",en:"Light & flexible"},d:{tr:"Kanat yapılı esnek bağlantı, rahat kullanım.",en:"Flexible wing weft, comfortable all day."},lens:null,
+    price:{bb:{x:[1150,1150,1150]},bl:{x:[1200,1200,1200]},om:{x:[1250,1250,1250]}}},
+  sdouble:{name:"Super Double",tag:{tr:"En dolgun",en:"Fullest"},d:{tr:"Çift çekim, uçlara kadar kalın ve dolgun.",en:"Double drawn, thick all the way to the ends."},lens:["55-60","65-70"],
+    price:{bb:{"55-60":[900,850,800],"65-70":[1050,1000,950]},bl:{"55-60":[1100,1050,1000],"65-70":[1200,1150,1100]},om:{"55-60":[1150,1100,1050],"65-70":[1250,1200,1150]}}},
+  classic:{name:"Classic Hair",tag:{tr:"Toptan",en:"Wholesale"},d:{tr:"Toptan alımlar için en avantajlı seçenek.",en:"Best value for wholesale orders."},lens:["55-60","65-70"],
+    price:{bb:{"55-60":[800,750,700],"65-70":[900,850,800]},bl:{"55-60":[900,850,800],"65-70":[1000,950,900]},om:{"55-60":[950,900,850],"65-70":[1050,1000,950]}}}
+};
+const SVC = [
+  {id:"an",tr:["Ücretsiz Saç Analizi","Saç yapınıza uygun yöntem ve renk seçimi"],en:["Free Hair Consultation","Choose the right method and shade"],dur:30},
+  {id:"nd",tr:["Needle Kaynak","Görünmez, doğal geçişli iğne kaynak uygulaması"],en:["Needle Extensions","Invisible needle-method application"],dur:180},
+  {id:"bf",tr:["Butterfly Kaynak","Hafif, esnek kanat yapılı kaynak uygulaması"],en:["Butterfly Extensions","Light, flexible butterfly weft application"],dur:150},
+  {id:"mk",tr:["Mikro Kaynak","İnce saçlar için mikro bağlantılı uygulama"],en:["Micro Extensions","Micro-link application for fine hair"],dur:180},
+  {id:"mt",tr:["Bakım / Sıkılaştırma","Mevcut kaynağın yenilenmesi"],en:["Maintenance / Move-up","Refresh your existing extensions"],dur:90}
+];
+const T = {
+  tr:{demo1:"ÖRNEK TASARIM",demo2:"Müşteri sunumu içindir. Randevu ve sipariş talepleri canlı olarak panele düşer; online kart ödemesi henüz aktif değil.",m1:"Ürünler",m2:"Randevu",m3:"Hakkımızda",m4:"İletişim",h0:"%100 Gerçek İnsan Saçı",h1:"Saçınızda <em>doğal</em> güzellik, dünyaya kapımızdan",h2:"Premium kaynak saçları dünyanın her yerine gönderiyoruz. Bahçelievler salonumuzda ise uzman ekibimizle kaynak uygulamasını yapıyoruz.",h3:"Saç Satın Al",h4:"Randevu Al",f1:"İnsan saçı",f2:"Günde kargo",f3:"Instagram takipçi",f4:"Müşteri ülkeleri",hc1:"Bahçelievler Salon",hc2:"Needle, Butterfly & Mikro kaynak uygulaması",t1:"Dünyaya Gönderim",t2:"Toptan Fiyat Avantajı",p0:"Koleksiyon",p1:"Saçınızı seçin, fiyatı anında görün",p2:"Ürün, renk, uzunluk ve kilogram seçin. Alacağınız miktar arttıkça kilogram fiyatı otomatik düşer.",c1:"Renk",c2:"Uzunluk",c3:"Miktar (kg)",s1:"Ürün",s2:"Kg fiyatı",s3:"Toplam",s4:"Kargo ve gümrük ülkeye göre hesaplanır.",s5:"Sepete Ekle",s6:"WhatsApp'tan Teklif Al",k1:"Premium kalite",k1s:"Kalın ve dolgun uçlar",k2:"Uzun ömürlü",k2s:"Doğru bakımla yıllarca kullanım",k3:"3 günde kargo",k3s:"Dünyanın her yerine",k4:"Güvenli paket",k4s:"Sigortalı ve özenli teslimat",b0:"Bahçelievler Salon",b1:"Online randevu alın",b2:"Hizmeti, günü ve saati seçin. Randevunuz saniyeler içinde oluşsun, size SMS ve WhatsApp ile hatırlatalım.",b3:"Randevuyu Onayla",a0:"Hakkımızda",a1:"“Her müşterimize kendi saçı gibi doğal duran, uzun ömürlü bir sonuç sunuyoruz.”",a2:"İstanbul Bahçelievler'deki salonumuzda saç uygulaması yapıyor, %100 gerçek insan saçını toptan ve perakende olarak dünyanın dört bir yanına gönderiyoruz.",st1:"Ücretsiz saç analizi",st1s:"Saç yapınıza uygun ürün ve yöntemi birlikte seçelim.",st2:"Renk eşleştirme",st2s:"Kendi renginize birebir uyan tonu belirleyelim.",st3:"Uygulama",st3s:"Uzman ekibimiz kaynağı titizlikle uygulasın.",st4:"Bakım & takip",st4s:"Bakım randevularıyla saçınız ilk günkü gibi kalsın.",ct1:"Salon",ct1s:"Adres bilgisi eklenecek",ct2:"Hızlı iletişim",ct2s:"Sipariş ve randevu için yazın",ct3s:"Uygulama örnekleri ve yorumlar",ft:"Tasarım: Mehmet Yıldırım Digital · Örnek sunum",d1:"Sepetim",d2:"Sipariş Talebi Gönder",d3:"Havale/EFT",
+    from:"başlayan fiyat",perkg:"/kg",dur:"dk",days:["Pzt","Sal","Çar","Per","Cum","Cmt","Paz"],months:["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"],pickDay:"Önce bir gün seçin",slotsFor:"için uygun saatler",closed:"Pazar günleri kapalıyız",n:"Ad Soyad",t:"Telefon",added:"Sepete eklendi",empty:"Sepetiniz boş",remove:"Kaldır",needAll:"Hizmet, gün, saat, ad ve telefon gerekli",ok:"<b>Randevu talebiniz alındı.</b> Salonumuz en kısa sürede WhatsApp üzerinden onay verecek.",taken:"Bu saat az önce doldu, lütfen başka bir saat seçin.",load:"Saatler yükleniyor…",ordNeed:"Ad, telefon ve ülke bilgisi gerekli",ordOk:"Sipariş talebiniz alındı! Ödeme ve kargo için WhatsApp üzerinden size ulaşacağız.",err:"Bağlantı hatası, lütfen tekrar deneyin.",on:"Ad Soyad",op:"Telefon / WhatsApp",oc:"Ülke / Şehir",pay:"Örnek sitede ödeme yapılmaz. Gerçek sitede bu buton iyzico güvenli ödeme sayfasını açar.",tier:["1-5 kg","5-10 kg","10+ kg"],len:"cm",noLen:"Tek fiyat"},
+  en:{demo1:"DESIGN PREVIEW",demo2:"Client preview. Booking and order requests are live; online card payment is not active yet.",m1:"Shop",m2:"Book",m3:"About",m4:"Contact",h0:"100% Real Human Hair",h1:"Natural beauty for your hair, <em>shipped</em> worldwide",h2:"We ship premium hair extensions all over the world, and our expert team applies them at our Bahçelievler salon in Istanbul.",h3:"Shop Hair",h4:"Book Now",f1:"Human hair",f2:"Day dispatch",f3:"Instagram followers",f4:"Client countries",hc1:"Bahçelievler Salon",hc2:"Needle, Butterfly & Micro extensions",t1:"Worldwide Shipping",t2:"Wholesale Pricing",p0:"Collection",p1:"Choose your hair, see the price instantly",p2:"Pick product, shade, length and weight. The per-kg price drops automatically as your order grows.",c1:"Shade",c2:"Length",c3:"Quantity (kg)",s1:"Product",s2:"Price per kg",s3:"Total",s4:"Shipping and customs calculated by country.",s5:"Add to Cart",s6:"Get a Quote on WhatsApp",k1:"Premium quality",k1s:"Thick, full ends",k2:"Long lasting",k2s:"Years of wear with proper care",k3:"3-day dispatch",k3s:"To anywhere in the world",k4:"Secure packaging",k4s:"Insured, careful delivery",b0:"Bahçelievler Salon",b1:"Book online",b2:"Choose a service, day and time. Your booking is confirmed in seconds, with SMS and WhatsApp reminders.",b3:"Confirm Booking",a0:"About",a1:"“Every client leaves with a natural, long-lasting result that looks like their own hair.”",a2:"At our Bahçelievler, Istanbul salon we apply extensions, and we ship 100% real human hair wholesale and retail to clients around the world.",st1:"Free consultation",st1s:"We choose the right product and method for your hair together.",st2:"Shade matching",st2s:"We find the tone that matches your own colour exactly.",st3:"Application",st3s:"Our expert team applies your extensions with care.",st4:"Care & follow-up",st4s:"Maintenance visits keep your hair looking like day one.",ct1:"Salon",ct1s:"Address to be added",ct2:"Quick contact",ct2s:"Message us for orders and bookings",ct3s:"Results and client reviews",ft:"Design: Mehmet Yıldırım Digital · Preview",d1:"Your Cart",d2:"Send Order Request",d3:"Bank transfer",
+    from:"from",perkg:"/kg",dur:"min",days:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],months:["January","February","March","April","May","June","July","August","September","October","November","December"],pickDay:"Pick a day first",slotsFor:"available times",closed:"We're closed on Sundays",n:"Full name",t:"Phone",added:"Added to cart",empty:"Your cart is empty",remove:"Remove",needAll:"Service, day, time, name and phone are required",ok:"<b>Booking request received.</b> The salon will confirm via WhatsApp shortly.",taken:"This time was just booked, please pick another.",load:"Loading times…",ordNeed:"Name, phone and country are required",ordOk:"Order request received! We will contact you on WhatsApp for payment and shipping.",err:"Connection error, please try again.",on:"Full name",op:"Phone / WhatsApp",oc:"Country / City",pay:"No payment is taken in this preview. On the live site this button opens the secure iyzico checkout.",tier:["1-5 kg","5-10 kg","10+ kg"],len:"cm",noLen:"Single price"}
+};
+let L="tr";
+const S={prod:"sdouble",color:"bb",len:"55-60",qty:1,cart:[],svc:"an",day:null,slot:null,view:new Date()};
+S.view.setDate(1);
+const $=id=>document.getElementById(id);
+const eur=n=>"€"+n.toLocaleString(L==="tr"?"tr-TR":"en-GB");
+const tierIdx=q=>q>=10?2:q>=5?1:0;
+function unit(){const p=P[S.prod],c=p.price[S.color];return (p.lens?c[S.len]:c.x)[tierIdx(S.qty)];}
+function toast(m){const t=$("toast");t.textContent=m;t.hidden=false;clearTimeout(t._t);t._t=setTimeout(()=>t.hidden=true,2400);}
+
+function renderProducts(){
+  $("products").innerHTML=Object.entries(P).map(([k,p])=>{
+    const min=Math.min(...Object.values(p.price).flatMap(o=>Object.values(o).flat()));
+    return `<button type="button" class="prod ${S.prod===k?"on":""}" data-p="${k}">
+      <div class="sw" style="background:${k==="genius"?COLORS.bb.g:k==="butterfly"?COLORS.bl.g:k==="sdouble"?COLORS.om.g:"linear-gradient(135deg,#3a2519,#8a6a45)"}"><span class="tag">${p.tag[L]}</span></div>
+      <div class="body"><h3>${p.name}</h3><p>${p.d[L]}</p><div class="from">${T[L].from}<b>${eur(min)}</b>${T[L].perkg}</div></div></button>`}).join("");
+  document.querySelectorAll(".prod").forEach(b=>b.onclick=()=>{S.prod=b.dataset.p;if(P[S.prod].lens&&!P[S.prod].lens.includes(S.len))S.len=P[S.prod].lens[0];renderProducts();renderCfg();$("config").scrollIntoView({behavior:"smooth",block:"nearest"});});
+}
+function renderCfg(){
+  const p=P[S.prod];
+  $("optColor").innerHTML=Object.entries(COLORS).map(([k,c])=>`<button type="button" class="opt ${S.color===k?"on":""}" data-c="${k}"><span class="dot" style="background:${c.g}"></span>${c[L]}</button>`).join("");
+  document.querySelectorAll("[data-c]").forEach(b=>b.onclick=()=>{S.color=b.dataset.c;renderCfg();});
+  $("grpLen").hidden=!p.lens; $("sLenRow").hidden=!p.lens;
+  if(p.lens){$("optLen").innerHTML=p.lens.map(l=>`<button type="button" class="opt ${S.len===l?"on":""}" data-l="${l}">${l} ${T[L].len}</button>`).join("");
+    document.querySelectorAll("[data-l]").forEach(b=>b.onclick=()=>{S.len=b.dataset.l;renderCfg();});}
+  const c=p.price[S.color], arr=p.lens?c[S.len]:c.x, ti=tierIdx(S.qty);
+  const flat=arr[0]===arr[2];
+  $("tiers").innerHTML=flat?`<div class="on" style="grid-column:1/-1">${T[L].noLen}<b>${eur(arr[0])}${T[L].perkg}</b></div>`:arr.map((v,i)=>`<div class="${i===ti?"on":""}">${T[L].tier[i]}<b>${eur(v)}</b></div>`).join("");
+  $("qty").value=S.qty;
+  const u=unit();
+  $("sProd").textContent=p.name; $("sColor").textContent=COLORS[S.color][L]; $("sLen").textContent=S.len+" "+T[L].len;
+  $("sUnit").textContent=eur(u)+T[L].perkg; $("sTotal").textContent=eur(u*S.qty);
+}
+$("qm").onclick=()=>{S.qty=Math.max(1,S.qty-1);renderCfg();};
+$("qp").onclick=()=>{S.qty=Math.min(100,S.qty+1);renderCfg();};
+$("qty").oninput=e=>{const v=parseInt(e.target.value,10);if(v>=1){S.qty=Math.min(100,v);renderCfg();}};
+$("addCart").onclick=()=>{const p=P[S.prod];S.cart.push({p:S.prod,c:S.color,l:p.lens?S.len:null,q:S.qty,u:unit()});renderCart();toast(T[L].added);};
+$("waQuote").onclick=()=>{const p=P[S.prod];$("waQuote").href="https://wa.me/905384158053?text="+encodeURIComponent(`${p.name} · ${COLORS[S.color][L]}${p.lens?" · "+S.len+" cm":""} · ${S.qty} kg`);};
+
+function renderCart(){
+  $("cartCount").textContent=S.cart.length;
+  if(!S.cart.length){$("items").innerHTML=`<div class="empty">${T[L].empty}</div>`;$("dTotal").textContent=eur(0);$("checkout").disabled=true;return;}
+  $("checkout").disabled=false;
+  $("items").innerHTML=S.cart.map((it,i)=>`<div class="item"><div class="s" style="background:${COLORS[it.c].g}"></div><div><b>${P[it.p].name}</b><span>${COLORS[it.c][L]}${it.l?" · "+it.l+" cm":""} · ${it.q} kg</span></div><div class="p">${eur(it.u*it.q)}<button type="button" data-r="${i}">${T[L].remove}</button></div></div>`).join("");
+  document.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>{S.cart.splice(+b.dataset.r,1);renderCart();});
+  $("dTotal").textContent=eur(S.cart.reduce((s,i)=>s+i.u*i.q,0));
+}
+const openD=o=>{$("ov").hidden=!o;$("dr").hidden=!o;};
+$("openCart").onclick=()=>openD(true);$("closeCart").onclick=()=>openD(false);$("ov").onclick=()=>openD(false);
+$("checkout").onclick=()=>{
+  const n=$("oName").value.trim(),p=$("oPhone").value.trim(),c=$("oCountry").value.trim();
+  if(!n||p.replace(/\D/g,"").length<7||!c){toast(T[L].ordNeed);return;}
+  const b=$("checkout");b.disabled=true;
+  RA.order({name:n,phone:p,country:c,items:S.cart.map(it=>({t:P[it.p].name+" · "+COLORS[it.c].tr+(it.l?" · "+it.l+" cm":""),q:it.q,u:it.u})),total:S.cart.reduce((a,i)=>a+i.u*i.q,0)})
+   .then(()=>{S.cart=[];renderCart();openD(false);toast(T[L].ordOk);})
+   .catch(()=>{toast(T[L].err);b.disabled=false;});
+};
+
+// booking
+function renderSvc(){
+  $("svc").innerHTML=SVC.map(s=>`<button type="button" class="svcb ${S.svc===s.id?"on":""}" data-s="${s.id}"><div><b>${s[L][0]}</b><span>${s[L][1]}</span></div><em>${s.dur} ${T[L].dur}</em></button>`).join("");
+  document.querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>{S.svc=b.dataset.s;renderSvc();renderSum();});
+}
+function renderCal(){
+  const v=S.view,y=v.getFullYear(),m=v.getMonth(),today=new Date();today.setHours(0,0,0,0);
+  $("mon").textContent=T[L].months[m]+" "+y;
+  const first=(new Date(y,m,1).getDay()+6)%7, n=new Date(y,m+1,0).getDate();
+  let h=T[L].days.map(d=>`<div class="dn">${d}</div>`).join("")+"<div></div>".repeat(first);
+  for(let d=1;d<=n;d++){const dt=new Date(y,m,d);const off=dt<today||RA.S.closedWeekdays.includes(dt.getDay())||RA.S.closed.includes(RA.ymd(dt));const on=S.day&&+S.day===+dt;
+    h+=`<button type="button" class="day ${on?"on":""}" data-d="${d}" ${off?"disabled":""}>${d}</button>`;}
+  $("days").innerHTML=h;
+  document.querySelectorAll("[data-d]").forEach(b=>b.onclick=()=>{S.day=new Date(y,m,+b.dataset.d);S.slot=null;renderCal();});
+  renderSlots();
+}
+function renderSlots(){
+  if(!S.day){$("slotTitle").textContent=T[L].pickDay;$("slots").innerHTML="";renderSum();return;}
+  $("slotTitle").textContent=S.day.toLocaleDateString(L==="tr"?"tr-TR":"en-GB",{day:"numeric",month:"long",weekday:"long"})+" "+T[L].slotsFor;
+  const times=RA.S.times,_k=RA.ymd(S.day);
+  if(!(_k in RA.T)){$("slots").innerHTML=`<span class="muted-s">${T[L].load}</span>`;RA.taken(_k).then(v=>{RA.T[_k]=v}).catch(()=>{RA.T[_k]=[]}).then(()=>{if(S.day&&RA.ymd(S.day)===_k)renderSlots()});renderSum();return;}
+  const _now=new Date(),_hm=String(_now.getHours()).padStart(2,"0")+":"+String(_now.getMinutes()).padStart(2,"0"),_isT=_k===RA.ymd(_now);
+  $("slots").innerHTML=times.map((t,i)=>{const busy=RA.T[_k].includes(t)||(_isT&&t<=_hm);return `<button type="button" class="slot ${S.slot===t?"on":""}" data-t="${t}" ${busy?"disabled":""}>${t}</button>`}).join("");
+  document.querySelectorAll("[data-t]").forEach(b=>b.onclick=()=>{S.slot=b.dataset.t;renderSlots();});
+  renderSum();
+}
+function renderSum(){
+  const s=SVC.find(x=>x.id===S.svc);
+  $("bsum").textContent=s[L][0]+(S.day?" · "+S.day.toLocaleDateString(L==="tr"?"tr-TR":"en-GB",{day:"numeric",month:"short"}):"")+(S.slot?" · "+S.slot:"");
+}
+$("pm").onclick=()=>{const t=new Date();t.setDate(1);t.setHours(0,0,0,0);const p=new Date(S.view.getFullYear(),S.view.getMonth()-1,1);if(p>=t){S.view=p;renderCal();}};
+$("nm").onclick=()=>{S.view=new Date(S.view.getFullYear(),S.view.getMonth()+1,1);renderCal();};
+$("bform").onsubmit=e=>{e.preventDefault();
+  if(!S.day||!S.slot||!$("bn").value.trim()||!$("bt").value.trim()){toast(T[L].needAll);return;}
+  const _k=RA.ymd(S.day),_t=S.slot,_b=$("bsub");_b.disabled=true;
+  RA.book({name:$("bn").value.trim(),phone:$("bt").value,svc:S.svc,date:_k,time:_t})
+   .then(()=>{RA.T[_k]=(RA.T[_k]||[]).concat(_t);S.slot=null;$("bok").innerHTML=T[L].ok;$("bok").hidden=false;renderSlots();})
+   .catch(()=>{delete RA.T[_k];S.slot=null;toast(T[L].taken);renderSlots();})
+   .finally(()=>{_b.disabled=false;});};
+
+// i18n
+function applyLang(){
+  document.documentElement.lang=L;
+  document.querySelectorAll("[data-i]").forEach(el=>{const v=T[L][el.dataset.i];if(v==null)return;if(el.hasAttribute("data-html"))el.innerHTML=v;else el.textContent=v;});
+  document.querySelectorAll("[data-ph]").forEach(el=>el.placeholder=T[L][el.dataset.ph]);
+  $("lTR").classList.toggle("on",L==="tr");$("lEN").classList.toggle("on",L==="en");
+  renderProducts();renderCfg();renderCart();renderSvc();renderCal();
+  if(!$("bok").hidden)$("bok").innerHTML=T[L].ok;
+}
+$("lTR").onclick=()=>{L="tr";applyLang();};$("lEN").onclick=()=>{L="en";applyLang();};
+
+// hero strands
+(function(){
+  const c=$("strands"),x=c.getContext("2d");let w,h,t=0;
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const lines=Array.from({length:120},(_,i)=>({o:i/120,a:Math.random()*6.28,s:.4+Math.random()*.8,hue:Math.random()}));
+  function size(){w=c.width=c.offsetWidth*devicePixelRatio;h=c.height=c.offsetHeight*devicePixelRatio;}
+  function draw(){
+    x.fillStyle="#141110";x.fillRect(0,0,w,h);
+    lines.forEach(l=>{
+      x.beginPath();
+      const bx=w*(.05+l.o*.95);
+      for(let yy=-20;yy<=h+20;yy+=12*devicePixelRatio){
+        const k=yy/h;
+        const xx=bx+Math.sin(k*3.2+l.a+t*l.s*.4)*w*.05*(.4+k)+k*k*w*.12;
+        yy<0?x.moveTo(xx,yy):x.lineTo(xx,yy);
+      }
+      const g=x.createLinearGradient(0,0,0,h);
+      g.addColorStop(0,"rgba(40,26,18,.9)");g.addColorStop(.55,l.hue>.5?"rgba(120,82,48,.8)":"rgba(70,46,30,.8)");g.addColorStop(1,l.hue>.35?"rgba(214,178,122,.9)":"rgba(160,118,70,.8)");
+      x.strokeStyle=g;x.lineWidth=(1+l.hue*1.6)*devicePixelRatio;x.stroke();
+    });
+    if(!reduce){t+=.012;requestAnimationFrame(draw);}
+  }
+  size();addEventListener("resize",size);draw();
+})();
+
+applyLang();
+RA.loadSettings().then(renderCal);
+</script>
+</body>
+</html>

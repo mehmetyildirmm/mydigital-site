@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Yönetim Paneli · Rabia Aliefendioğlu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4EFE7;--card:#FFFDF9;--ink:#141110;--mut:#76695E;--line:#E6DCCD;--gold:#B08A4E;--gold2:#8C6A36;--side:#141110;
+--ok:#2F7D55;--okb:#E3F1E8;--wait:#B7791F;--waitb:#FBF0DC;--no:#B23A3A;--nob:#F8E3E1;--done:#4A5A7A;--doneb:#E6EAF3;
+--serif:"Cormorant Garamond",Georgia,serif;--sans:"Jost",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+a{color:inherit}
+/* login */
+.login{min-height:100vh;display:grid;place-items:center;padding:16px;background:radial-gradient(900px 500px at 80% 0%,#3a2a1c,transparent 60%),#141110}
+.lbox{width:min(400px,100%);background:var(--card);border-radius:18px;padding:34px 28px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.brand b{font-family:var(--serif);font-size:28px;font-weight:600;display:block;line-height:1}
+.brand small{letter-spacing:.32em;font-size:11px;color:var(--gold)}
+.lbox h1{font-size:15px;font-weight:500;color:var(--mut);margin:22px 0 18px}
+.lbox label{display:block;font-size:13px;color:var(--mut);margin:12px 0 6px}
+.in{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:#fff;outline:none}
+.in:focus{border-color:var(--gold)}
+.btn{border:0;border-radius:10px;padding:11px 18px;background:var(--ink);color:#fff;font-weight:500}
+.btn.gold{background:var(--gold);color:#fff}
+.btn.ghost{background:transparent;box-shadow:inset 0 0 0 1.5px var(--line);color:var(--ink)}
+.btn.sm{padding:7px 12px;font-size:13px;border-radius:8px}
+.gbtn{width:100%;margin-top:4px;padding:13px;background:#fff;color:#1f1f1f;box-shadow:inset 0 0 0 1.5px var(--line);display:flex;align-items:center;justify-content:center;gap:10px;font-weight:500}.gbtn:hover{background:#FAF5EC}
+.hint{margin-top:14px;font-size:12.5px;color:var(--mut);text-align:center}
+.err{color:var(--no);font-size:13px;margin-top:10px;min-height:18px}
+/* layout */
+.app{display:grid;grid-template-columns:240px 1fr;min-height:100vh}
+aside{background:var(--side);color:#E9DFCF;padding:26px 16px;display:flex;flex-direction:column;gap:6px;position:sticky;top:0;height:100vh}
+aside .brand{padding:0 10px 22px}
+aside .brand b{color:#fff}
+.nav{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;border:0;background:none;color:#CFC2AE;text-align:left;width:100%}
+.nav svg{width:18px;height:18px;flex:none}
+.nav.on,.nav:hover{background:#2A221B;color:#fff}
+.nav .cnt{margin-left:auto;background:var(--gold);color:#fff;font-size:11.5px;border-radius:20px;padding:1px 8px}
+aside .foot{margin-top:auto;font-size:12px;color:#8F826F;padding:10px}
+aside .foot a{display:block;margin-top:8px;color:#E9DFCF}
+main{padding:28px 32px 60px;min-width:0}
+.top{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:24px;flex-wrap:wrap}
+.top h2{font-family:var(--serif);font-size:36px;font-weight:600;line-height:1}
+.top p{color:var(--mut);margin-top:6px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.kpi small{color:var(--mut);font-size:13px}
+.kpi b{display:block;font-size:30px;font-weight:500;margin-top:6px}
+.kpi span{font-size:12.5px;color:var(--gold2)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.card h3{font-size:16px;font-weight:600;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center}
+.grid2{display:grid;grid-template-columns:1.4fr 1fr;gap:16px}
+.tl{display:flex;flex-direction:column}
+.tl .row{display:grid;grid-template-columns:62px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
+.tl .row:first-child{border-top:0}
+.tl time{font-weight:600;font-size:15px}
+.tl b{display:block;font-weight:500}
+.tl span{font-size:13px;color:var(--mut)}
+.pill{display:inline-block;font-size:12px;font-weight:500;border-radius:20px;padding:3px 10px;white-space:nowrap;text-transform:capitalize}
+.p-onaylı{background:var(--okb);color:var(--ok)}.p-bekliyor{background:var(--waitb);color:var(--wait)}.p-iptal{background:var(--nob);color:var(--no)}.p-tamamlandı{background:var(--doneb);color:var(--done)}
+.p-yeni{background:var(--waitb);color:var(--wait)}.p-hazırlanıyor{background:#EFE6F7;color:#6B3FA0}.p-kargoda{background:#E1EEF8;color:#1F5F95}.p-teslim{background:var(--okb);color:var(--ok)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:20px;padding:6px 14px;font-size:13.5px}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.filters .in{width:auto;flex:1;min-width:180px;padding:8px 12px}
+table{width:100%;border-collapse:collapse}
+th{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+td{padding:12px;border-bottom:1px solid var(--line);vertical-align:middle}
+td small{display:block;color:var(--mut);font-size:12.5px}
+.acts{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.ic{width:32px;height:32px;border-radius:8px;border:1.5px solid var(--line);background:#fff;display:grid;place-items:center}
+.ic svg{width:16px;height:16px}
+.ic.ok{color:var(--ok)}.ic.no{color:var(--no)}.ic.done{color:var(--done)}.ic.wa{color:#1f9d55}
+.empty{padding:30px;text-align:center;color:var(--mut)}
+/* week */
+.wk-h{display:flex;align-items:center;gap:10px}
+.week{display:grid;grid-template-columns:64px repeat(6,1fr);border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.week .h{background:#FAF5EC;padding:10px 6px;text-align:center;font-size:13px;border-bottom:1px solid var(--line);border-left:1px solid var(--line)}
+.week .h b{display:block;font-size:18px;font-weight:500}
+.week .h.today{background:var(--ink);color:#fff}
+.week .h.closed{color:#b9ab98}
+.week .t{font-size:12.5px;color:var(--mut);padding:8px 6px;border-bottom:1px solid var(--line);height:64px}
+.week .c{border-left:1px solid var(--line);border-bottom:1px solid var(--line);height:64px;padding:4px;position:relative}
+.week .c.off{background:repeating-linear-gradient(45deg,#faf6ef 0 6px,#f3ede2 6px 12px)}
+.week .c button.free{width:100%;height:100%;border:1.5px dashed transparent;background:none;border-radius:8px;color:transparent;font-size:12px}
+.week .c button.free:hover{border-color:var(--line);color:var(--mut)}
+.ev{height:100%;border-radius:8px;padding:6px 8px;font-size:12.5px;line-height:1.25;overflow:hidden;border-left:3px solid;cursor:pointer}
+.ev b{display:block;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ev.onaylı{background:var(--okb);border-color:var(--ok)}.ev.bekliyor{background:var(--waitb);border-color:var(--wait)}.ev.tamamlandı{background:var(--doneb);border-color:var(--done)}
+/* settings */
+.slots{display:flex;flex-wrap:wrap;gap:8px}
+.slot{border:1.5px solid var(--line);border-radius:10px;padding:8px 12px;background:#fff;display:flex;gap:8px;align-items:center}
+.slot button{border:0;background:none;color:var(--no);font-size:16px;line-height:1}
+.wd{display:flex;gap:8px;flex-wrap:wrap}
+.tag{display:inline-flex;gap:8px;align-items:center;background:#FAF5EC;border:1px solid var(--line);border-radius:20px;padding:5px 12px;font-size:13.5px;margin:0 6px 6px 0}
+.tag button{border:0;background:none;color:var(--no)}
+.frow{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.frow .in{width:auto;flex:1;min-width:140px}
+/* modal */
+.ov{position:fixed;inset:0;background:rgba(20,17,16,.5);display:grid;place-items:center;padding:16px;z-index:50}
+.md{background:var(--card);border-radius:16px;padding:24px;width:min(460px,100%);max-height:90vh;overflow:auto}
+.md h3{font-family:var(--serif);font-size:26px;font-weight:600;margin-bottom:14px}
+.md label{display:block;font-size:13px;color:var(--mut);margin:10px 0 5px}
+.md .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.md .end{display:flex;justify-content:flex-end;gap:8px;margin-top:20px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 18px;border-radius:12px;font-size:14px;z-index:60;box-shadow:0 12px 30px rgba(0,0,0,.25)}
+.demo{background:var(--gold);color:#fff;font-size:12.5px;text-align:center;padding:6px 12px}
+.mtop{display:none}
+@media (max-width:960px){
+  .app{grid-template-columns:1fr}
+  aside{position:fixed;inset:0 30% 0 0;z-index:40;transform:translateX(-100%);transition:.25s;height:100%}
+  aside.open{transform:none}
+  .mtop{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--side);color:#fff;position:sticky;top:0;z-index:30}
+  .mtop b{font-family:var(--serif);font-size:20px}
+  .mtop button{background:none;border:0;color:#fff;font-size:24px}
+  main{padding:20px 16px 60px}
+  .kpis{grid-template-columns:1fr 1fr}
+  .grid2{grid-template-columns:1fr}
+  .top h2{font-size:30px}
+  .tbl-wrap{overflow-x:auto}
+  table.rsp thead{display:none}
+  table.rsp tr{display:grid;grid-template-columns:1fr auto;gap:4px 10px;padding:12px 0;border-bottom:1px solid var(--line)}
+  table.rsp td{border:0;padding:2px 0}
+  table.rsp td.a{grid-column:1/-1}
+  .acts{justify-content:flex-start}
+  .week-wrap{overflow-x:auto}.week{min-width:720px}
+}
+</style>
+</head>
+<body>
+
+<section class="login" id="login">
+  <div class="lbox">
+    <div class="brand"><b>Rabia Aliefendioğlu</b><small>YÖNETİM PANELİ</small></div>
+    <div id="lform">
+      <h1>Randevu ve siparişleri yönetmek için Google hesabınızla giriş yapın.</h1>
+      <button class="btn gbtn" id="gbtn" type="button"><svg viewBox="0 0 48 48" width="20" height="20"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>Google ile giriş yap</button>
+      <div class="err" id="lerr"></div>
+      <p class="hint">Sadece yetkilendirilmiş hesaplar giriş yapabilir.</p>
+    </div>
+    <div id="lwait" hidden><p class="hint" style="margin-top:24px">Yükleniyor…</p></div>
+    <div id="denied" hidden>
+      <h1>Bu hesabın panele erişim yetkisi yok.</h1>
+      <p class="hint" id="demail" style="text-align:left;margin:-6px 0 16px"></p>
+      <button class="btn ghost" id="lout2" type="button" style="width:100%">Başka hesapla giriş yap</button>
+    </div>
+  </div>
+</section>
+
+<div class="app" id="app" hidden>
+  <div class="mtop"><b>Rabia Aliefendioğlu</b><button id="burger" aria-label="Menü">☰</button></div>
+  <aside id="side">
+    <div class="brand"><b>Rabia Aliefendioğlu</b><small>YÖNETİM PANELİ</small></div>
+    <button class="nav on" data-v="ozet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Özet</button>
+    <button class="nav" data-v="randevu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Randevular<span class="cnt" id="cWait"></span></button>
+    <button class="nav" data-v="takvim"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M9 10v11M15 10v11"/></svg>Haftalık Takvim</button>
+    <button class="nav" data-v="siparis"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg>Siparişler<span class="cnt" id="cNew"></span></button>
+    <button class="nav" data-v="musteri"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-6 7-6s7 2 7 6M16 4a4 4 0 010 8M22 21c0-3-2-5-4-5.6"/></svg>Müşteriler</button>
+    <button class="nav" data-v="ayar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg>Çalışma Saatleri</button>
+    <div class="foot"><span id="who" style="display:block;color:#CFC2AE;margin-bottom:8px;word-break:break-all"></span>Tasarım: Mehmet Yıldırım Digital<a href="index.html">← Siteye dön</a><a href="#" id="logout">Çıkış yap</a></div>
+  </aside>
+  <main id="main"></main>
+</div>
+
+<div class="ov" id="ov" hidden><div class="md" id="md"></div></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+firebase.initializeApp({apiKey:"AIzaSyCxpn3sjiIrhdqzaiFMHHJ0DSRgypyuEG0",authDomain:"rabia-aliefendioglu.firebaseapp.com",projectId:"rabia-aliefendioglu",storageBucket:"rabia-aliefendioglu.firebasestorage.app",messagingSenderId:"627472096954",appId:"1:627472096954:web:0121b6945e4822f110ac83"});
+const db=firebase.firestore(),auth=firebase.auth(),FV=firebase.firestore.FieldValue;
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const ymd=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+const RA={B:[],O:[],A:[],S:{times:["10:00","11:00","12:00","13:30","14:30","15:30","16:30","17:30","18:30"],closedWeekdays:[0],closed:[]},ymd,
+  SVCN:{an:"Ücretsiz Saç Analizi",nd:"Needle Kaynak",bf:"Butterfly Kaynak",mk:"Mikro Kaynak",mt:"Bakım & Sıkılaştırma"},
+  SVCD:{an:30,nd:180,bf:150,mk:180,mt:90},
+  bookings(){return this.B},orders(){return this.O},settings(){return this.S}};
+const TR_D=["Pazar","Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi"];
+const TR_DS=["Paz","Pzt","Sal","Çar","Per","Cum","Cmt"];
+const TR_M=["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"];
+const pd=s=>{const [y,m,d]=s.split("-").map(Number);return new Date(y,m-1,d)};
+const fd=s=>{const d=pd(s);return d.getDate()+" "+TR_M[d.getMonth()]+" "+TR_DS[d.getDay()]};
+let today=ymd(new Date());
+const eur=n=>"€"+Number(n||0).toLocaleString("tr-TR");
+const telFmt=p=>{p=String(p||"");return p.startsWith("90")&&p.length===12?"0"+p.slice(2,5)+" "+p.slice(5,8)+" "+p.slice(8,10)+" "+p.slice(10):(p?"+"+p:"")};
+const normPhone=p=>{p=String(p||"").replace(/\D/g,"");if(p.startsWith("0"))p="9"+p;else if(p.length===10)p="90"+p;return p};
+const I={
+ ok:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12l5 5L20 7"/></svg>',
+ no:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 6l12 12M18 6L6 18"/></svg>',
+ done:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>',
+ wa:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2a9.7 9.7 0 00-8.3 14.7L2.3 21.8l5-1.3A9.7 9.7 0 1012 2.2zm4.4 11.7c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 01-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 00-.6.3 2.7 2.7 0 00-.8 2c0 1.2.9 2.3 1 2.5.1.2 1.7 2.6 4.2 3.7 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1z"/></svg>',
+ ed:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg>'
+};
+function toast(t){const e=document.createElement("div");e.className="toast";e.textContent=t;document.body.appendChild(e);setTimeout(()=>e.remove(),2600)}
+const fail=e=>{console.error(e);toast("İşlem yapılamadı: "+(e.code==="permission-denied"?"yetki yok":"bağlantı hatası"))};
+function waLink(b){const msg=`Merhaba ${b.name.split(" ")[0]} Hanım, ${fd(b.date)} saat ${b.time} ${RA.SVCN[b.svc]} randevunuz ${b.status==="onaylı"?"onaylanmıştır. Sizi bekliyoruz!":b.status==="iptal"?"iptal edilmiştir.":"için size ulaşıyoruz."} Rabia Aliefendioğlu Hair · Bahçelievler`;return "https://wa.me/"+b.phone+"?text="+encodeURIComponent(msg)}
+
+/* ---------- giriş ---------- */
+let unsub=[],USER=null,ready={b:0,o:0,s:0};
+$("gbtn").onclick=()=>{$("lerr").textContent="";auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).catch(e=>{if(e.code!=="auth/popup-closed-by-user")$("lerr").textContent="Giriş yapılamadı: "+e.message})};
+$("logout").onclick=e=>{e.preventDefault();auth.signOut()};
+$("lout2").onclick=()=>auth.signOut();
+$("burger").onclick=()=>$("side").classList.toggle("open");
+auth.onAuthStateChanged(u=>{
+  unsub.forEach(f=>f());unsub=[];USER=u;ready={b:0,o:0,s:0};
+  if(!u){$("login").hidden=false;$("app").hidden=true;$("lform").hidden=false;$("denied").hidden=true;$("lwait").hidden=true;return}
+  $("lform").hidden=true;$("lwait").hidden=false;
+  const denied=e=>{unsub.forEach(f=>f());unsub=[];$("lwait").hidden=true;$("denied").hidden=false;$("demail").textContent=u.email;console.warn(e)};
+  unsub.push(db.collection("bookings").onSnapshot(q=>{RA.B=q.docs.map(d=>({id:d.id,...d.data()}));ready.b=1;go1()},denied));
+  unsub.push(db.collection("orders").onSnapshot(q=>{RA.O=q.docs.map(d=>{const x=d.data();return {id:d.id,...x,date:x.created&&x.created.toDate?ymd(x.created.toDate()):today}}).sort((a,b)=>(b.created?.seconds||9e9)-(a.created?.seconds||9e9));ready.o=1;go1()},denied));
+  unsub.push(db.doc("settings/main").onSnapshot(d=>{if(d.exists)RA.S={...RA.S,...d.data()};ready.s=1;go1()},()=>{ready.s=1;go1()}));
+  unsub.push(db.collection("admins").onSnapshot(q=>{RA.A=q.docs.map(d=>d.id);if(V==="ayar"&&$("ov").hidden)render()},()=>{}));
+});
+let prevWait=-1;
+function go1(){
+  if(!(ready.b&&ready.o&&ready.s))return;
+  $("login").hidden=true;$("app").hidden=false;$("who").textContent=USER.email;
+  const w=RA.B.filter(b=>b.status==="bekliyor").length;
+  if(prevWait>=0&&w>prevWait){toast("🔔 Yeni randevu talebi geldi!");}
+  prevWait=w;
+  if($("ov").hidden)render();else badges();
+}
+
+let V="ozet",F={rs:"yaklaşan",rq:"",os:"hepsi"},WK=0;
+document.querySelectorAll(".nav").forEach(b=>b.onclick=()=>{V=b.dataset.v;document.querySelectorAll(".nav").forEach(x=>x.classList.toggle("on",x===b));$("side").classList.remove("open");render()});
+function go(v){document.querySelector(`.nav[data-v="${v}"]`).click()}
+function badges(){
+  const w=RA.B.filter(b=>b.status==="bekliyor"&&b.date>=today).length,n=RA.O.filter(o=>o.status==="yeni").length;
+  $("cWait").textContent=w||"";$("cWait").hidden=!w;$("cNew").textContent=n||"";$("cNew").hidden=!n;
+  document.title=(w+n?`(${w+n}) `:"")+"Yönetim Paneli · Rabia Aliefendioğlu";
+}
+function render(){today=ymd(new Date());badges();({ozet,randevu,takvim,siparis,musteri,ayar})[V]()}
+function head(t,p,right=""){return `<div class="top"><div><h2>${t}</h2><p>${p}</p></div><div>${right}</div></div>`}
+const addBtn=`<button class="btn gold" onclick="editB()">+ Randevu Ekle</button>`;
+const slotOf=b=>b.date+"_"+b.time;
+const busyAt=(date,time,exceptId)=>RA.B.some(x=>x.id!==exceptId&&x.date===date&&x.time===time&&x.status!=="iptal");
+
+/* ---------- randevu işlemleri ---------- */
+function setStatus(id,st){
+  const b=RA.B.find(x=>x.id===id);if(!b)return;
+  const batch=db.batch(),ref=db.doc("bookings/"+id);
+  if(st==="iptal"&&b.status!=="iptal")batch.delete(db.doc("slots/"+slotOf(b)));
+  if(st!=="iptal"&&b.status==="iptal"){if(busyAt(b.date,b.time,id)){toast("Bu saatte başka randevu var");return}batch.set(db.doc("slots/"+slotOf(b)),{b:id})}
+  batch.update(ref,{status:st});
+  batch.commit().then(()=>toast(`${b.name} · ${st}`)).catch(fail);
+}
+function acts(b){
+  let h="";
+  if(b.status==="bekliyor")h+=`<button class="ic ok" title="Onayla" onclick="setStatus('${b.id}','onaylı')">${I.ok}</button>`;
+  if(b.status==="onaylı")h+=`<button class="ic done" title="Tamamlandı" onclick="setStatus('${b.id}','tamamlandı')">${I.done}</button>`;
+  if(b.status==="bekliyor"||b.status==="onaylı")h+=`<button class="ic no" title="İptal et" onclick="setStatus('${b.id}','iptal')">${I.no}</button>`;
+  if(b.phone)h+=`<a class="ic wa" title="WhatsApp'tan yaz" target="_blank" rel="noopener" href="${waLink(b)}">${I.wa}</a>`;
+  h+=`<button class="ic" title="Düzenle" onclick="editB('${b.id}')">${I.ed}</button>`;
+  return `<div class="acts">${h}</div>`;
+}
+
+/* ÖZET */
+function ozet(){
+  const B=RA.B,O=RA.O,d=new Date(),hr=d.getHours();
+  const ws=new Date(d);ws.setDate(d.getDate()-((d.getDay()+6)%7));const we=new Date(ws);we.setDate(ws.getDate()+6);
+  const inWeek=b=>b.date>=ymd(ws)&&b.date<=ymd(we)&&b.status!=="iptal";
+  const tB=B.filter(b=>b.date===today&&b.status!=="iptal").sort((a,b)=>a.time.localeCompare(b.time));
+  const wait=B.filter(b=>b.status==="bekliyor"&&b.date>=today).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));
+  const mon=today.slice(0,7),mO=O.filter(o=>o.date.startsWith(mon)),rev=mO.reduce((s,o)=>s+(o.total||0),0);
+  const first=(USER.displayName||"").split(" ")[0];
+  $("main").innerHTML=head(`${hr<12?"Günaydın":hr<18?"İyi günler":"İyi akşamlar"}${first?", "+esc(first):""}`,`${d.getDate()} ${TR_M[d.getMonth()]} ${TR_D[d.getDay()]} · Bugün salonda ${tB.length} randevu var.`,addBtn)+`
+  <div class="kpis">
+    <div class="kpi"><small>Bugünkü randevu</small><b>${tB.length}</b><span>${tB.filter(b=>b.status==="onaylı").length} onaylı</span></div>
+    <div class="kpi"><small>Bu hafta</small><b>${B.filter(inWeek).length}</b><span>randevu</span></div>
+    <div class="kpi"><small>Onay bekleyen</small><b>${wait.length}</b><span>randevu talebi</span></div>
+    <div class="kpi"><small>Bu ay sipariş</small><b>${eur(rev)}</b><span>${mO.length} sipariş talebi</span></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><h3>Bugünün programı <button class="btn sm ghost" onclick="go('takvim')">Takvim →</button></h3>
+      <div class="tl">${tB.length?tB.map(b=>`<div class="row"><time>${b.time}</time><div><b>${esc(b.name)}</b><span>${RA.SVCN[b.svc]} · ${RA.SVCD[b.svc]} dk ${b.note?"· "+esc(b.note):""}</span></div><span class="pill p-${b.status}">${b.status}</span></div>`).join(""):`<div class="empty">Bugün randevu yok.</div>`}</div>
+    </div>
+    <div class="card"><h3>Onay bekleyenler <span class="pill p-bekliyor">${wait.length}</span></h3>
+      <div class="tl">${wait.length?wait.slice(0,6).map(b=>`<div class="row"><time>${b.time}</time><div><b>${esc(b.name)}</b><span>${fd(b.date)} · ${RA.SVCN[b.svc]}</span></div><div class="acts"><button class="ic ok" title="Onayla" onclick="setStatus('${b.id}','onaylı')">${I.ok}</button><button class="ic no" title="İptal" onclick="setStatus('${b.id}','iptal')">${I.no}</button>${b.phone?`<a class="ic wa" target="_blank" rel="noopener" href="${waLink(b)}">${I.wa}</a>`:""}</div></div>`).join(""):`<div class="empty">Bekleyen talep yok 🎉</div>`}</div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:16px"><h3>Son sipariş talepleri <button class="btn sm ghost" onclick="go('siparis')">Tümü →</button></h3>
+    <div class="tl">${O.length?O.slice(0,3).map(o=>`<div class="row"><time style="font-size:13px">#${o.id.slice(0,6).toUpperCase()}</time><div><b>${esc(o.name)}</b><span>${esc(o.country)} · ${(o.items||[]).map(i=>esc(i.t)+" ×"+i.q+" kg").join(", ")}</span></div><div style="text-align:right"><b>${eur(o.total)}</b><br><span class="pill p-${o.status}">${o.status}</span></div></div>`).join(""):`<div class="empty">Henüz sipariş talebi yok.</div>`}</div>
+  </div>`;
+}
+
+/* RANDEVULAR */
+function randevu(){
+  const d=new Date(),ws=new Date(d);ws.setDate(d.getDate()+7);
+  let B=RA.B.filter(b=>{
+    if(F.rs==="bugün")return b.date===today;
+    if(F.rs==="yaklaşan")return b.date>=today&&b.date<=ymd(ws);
+    if(F.rs==="bekliyor")return b.status==="bekliyor";
+    if(F.rs==="geçmiş")return b.date<today;
+    return true;});
+  if(F.rq){const q=F.rq.toLocaleLowerCase("tr");B=B.filter(b=>(b.name+b.phone).toLocaleLowerCase("tr").includes(q))}
+  B.sort((a,b)=>F.rs==="geçmiş"||F.rs==="tümü"?(b.date+b.time).localeCompare(a.date+a.time):(a.date+a.time).localeCompare(b.date+b.time));
+  const chips=["bugün","yaklaşan","bekliyor","geçmiş","tümü"].map(c=>`<button class="chip ${F.rs===c?"on":""}" onclick="F.rs='${c}';render()">${c[0].toLocaleUpperCase("tr")+c.slice(1)}</button>`).join("");
+  $("main").innerHTML=head("Randevular","Siteden gelen ve telefonla eklenen tüm randevular.",addBtn)+`
+  <div class="card"><div class="filters">${chips}<input class="in" placeholder="İsim veya telefon ara…" value="${esc(F.rq)}" oninput="F.rq=this.value;clearTimeout(window.__t);window.__t=setTimeout(()=>{render();const i=document.querySelector('.filters .in');i.focus();i.setSelectionRange(i.value.length,i.value.length)},250)"></div>
+  <div class="tbl-wrap"><table class="rsp"><thead><tr><th>Tarih / Saat</th><th>Müşteri</th><th>Hizmet</th><th>Durum</th><th></th></tr></thead><tbody>
+  ${B.length?B.map(b=>`<tr><td><b>${b.time}</b><small>${fd(b.date)}</small></td><td>${esc(b.name)}<small>${telFmt(b.phone)} · ${b.src==="site"?"🌐 Site":"📞 Telefon"}</small></td><td>${RA.SVCN[b.svc]}<small>${RA.SVCD[b.svc]} dk${b.note?" · "+esc(b.note):""}</small></td><td><span class="pill p-${b.status}">${b.status}</span></td><td class="a">${acts(b)}</td></tr>`).join(""):`<tr><td colspan="5"><div class="empty">Bu filtrede randevu yok.</div></td></tr>`}
+  </tbody></table></div></div>`;
+}
+
+/* TAKVİM */
+function takvim(){
+  const S=RA.S,B=RA.B.filter(b=>b.status!=="iptal");
+  const d=new Date();d.setHours(0,0,0,0);const mon=new Date(d);mon.setDate(d.getDate()-((d.getDay()+6)%7)+WK*7);
+  const days=[...Array(6)].map((_,i)=>{const x=new Date(mon);x.setDate(mon.getDate()+i);return x});
+  const off=x=>S.closedWeekdays.includes(x.getDay())||S.closed.includes(ymd(x));
+  const times=[...new Set([...S.times,...B.filter(b=>days.some(x=>ymd(x)===b.date)).map(b=>b.time)])].sort();
+  let g=`<div></div>`+days.map(x=>`<div class="h ${ymd(x)===today?"today":""} ${off(x)?"closed":""}">${TR_DS[x.getDay()]}<b>${x.getDate()}</b></div>`).join("");
+  times.forEach(t=>{g+=`<div class="t">${t}</div>`;days.forEach(x=>{const k=ymd(x),b=B.find(y=>y.date===k&&y.time===t);
+    g+=`<div class="c ${off(x)?"off":""}">${b?`<div class="ev ${b.status}" onclick="editB('${b.id}')"><b>${esc(b.name)}</b>${RA.SVCN[b.svc]}</div>`:off(x)?"":`<button class="free" onclick="editB(null,'${k}','${t}')">+ ekle</button>`}</div>`})});
+  const last=days[5];
+  $("main").innerHTML=head("Haftalık Takvim",`${mon.getDate()} ${TR_M[mon.getMonth()]} – ${last.getDate()} ${TR_M[last.getMonth()]} ${last.getFullYear()}`,
+   `<div class="wk-h"><button class="btn sm ghost" onclick="WK--;render()">‹ Önceki</button><button class="btn sm ghost" onclick="WK=0;render()">Bu hafta</button><button class="btn sm ghost" onclick="WK++;render()">Sonraki ›</button></div>`)+
+   `<div class="week-wrap"><div class="week">${g}</div></div><p style="color:var(--mut);font-size:13px;margin-top:10px">Boş bir saate tıklayarak telefonla gelen randevuyu ekleyebilirsiniz. Taralı günler kapalıdır.</p>`;
+}
+
+/* SİPARİŞLER */
+const OST=["yeni","hazırlanıyor","kargoda","teslim","iptal"];
+function siparis(){
+  let O=RA.O;if(F.os!=="hepsi")O=O.filter(o=>o.status===F.os);
+  const chips=["hepsi",...OST].map(c=>`<button class="chip ${F.os===c?"on":""}" onclick="F.os='${c}';render()">${c[0].toLocaleUpperCase("tr")+c.slice(1)}</button>`).join("");
+  $("main").innerHTML=head("Siparişler","Siteden gelen sipariş talepleri ve kargo takibi.")+`
+  <div class="card"><div class="filters">${chips}</div><div class="tbl-wrap"><table class="rsp"><thead><tr><th>Sipariş</th><th>Müşteri</th><th>Ürünler</th><th>Tutar</th><th>Durum</th></tr></thead><tbody>
+  ${O.length?O.map(o=>`<tr><td><b>#${o.id.slice(0,6).toUpperCase()}</b><small>${fd(o.date)}</small></td><td>${esc(o.name)}<small>${esc(o.country)}${o.phone?` · <a target="_blank" rel="noopener" href="https://wa.me/${o.phone}">${telFmt(o.phone)}</a>`:""}</small></td><td>${(o.items||[]).map(i=>`${esc(i.t)} <small style="display:inline">×${i.q} kg</small>`).join("<br>")}</td><td><b>${eur(o.total)}</b></td>
+  <td class="a"><select class="in" style="padding:7px 10px;width:auto" onchange="setO('${o.id}',{status:this.value})">${OST.map(s=>`<option ${o.status===s?"selected":""}>${s}</option>`).join("")}</select>
+  <input class="in" style="padding:7px 10px;width:170px;margin-top:6px" placeholder="Kargo takip no" value="${esc(o.cargo)}" onchange="setO('${o.id}',{cargo:this.value.slice(0,80)})"></td></tr>`).join(""):`<tr><td colspan="5"><div class="empty">Sipariş talebi yok.</div></td></tr>`}
+  </tbody></table></div></div>`;
+}
+function setO(id,v){db.doc("orders/"+id).update(v).then(()=>toast("Sipariş güncellendi")).catch(fail)}
+
+/* MÜŞTERİLER */
+function musteri(){
+  const m={};
+  RA.B.forEach(b=>{const k=b.phone||b.name;m[k]=m[k]||{name:b.name,phone:b.phone,vis:0,last:"",ord:0,spent:0};if(b.status==="tamamlandı")m[k].vis++;if(b.date>m[k].last)m[k].last=b.date});
+  RA.O.forEach(o=>{const k=o.phone||o.name;m[k]=m[k]||{name:o.name,phone:o.phone,vis:0,last:"",ord:0,spent:0};m[k].ord++;m[k].spent+=o.total||0;if(o.date>m[k].last)m[k].last=o.date});
+  const L=Object.values(m).sort((a,b)=>b.last.localeCompare(a.last));
+  $("main").innerHTML=head("Müşteriler",`${L.length} kayıtlı müşteri`)+`<div class="card"><div class="tbl-wrap"><table class="rsp"><thead><tr><th>Müşteri</th><th>Salon ziyareti</th><th>Sipariş</th><th>Son işlem</th><th></th></tr></thead><tbody>
+  ${L.length?L.map(c=>`<tr><td>${esc(c.name)}<small>${telFmt(c.phone)}</small></td><td>${c.vis}</td><td>${c.ord?c.ord+" · "+eur(c.spent):"—"}</td><td>${c.last?fd(c.last):"—"}</td><td class="a">${c.phone?`<div class="acts"><a class="ic wa" target="_blank" rel="noopener" href="https://wa.me/${c.phone}">${I.wa}</a></div>`:""}</td></tr>`).join(""):`<tr><td colspan="5"><div class="empty">Henüz müşteri kaydı yok.</div></td></tr>`}
+  </tbody></table></div></div>`;
+}
+
+/* AYARLAR */
+function ayar(){
+  const S=RA.S;
+  $("main").innerHTML=head("Çalışma Saatleri","Buradaki değişiklikler sitedeki randevu takvimine anında yansır.")+`
+  <div class="grid2">
+   <div class="card"><h3>Randevu saatleri</h3><div class="slots">${S.times.map(t=>`<span class="slot">${t}<button title="Kaldır" onclick="rmTime('${t}')">×</button></span>`).join("")}</div>
+    <div class="frow"><input class="in" type="time" id="nt" value="19:30"><button class="btn" onclick="addTime()">Saat ekle</button></div></div>
+   <div class="card"><h3>Kapalı günler</h3>
+    <p style="color:var(--mut);font-size:13.5px;margin-bottom:10px">Her hafta kapalı olan günler</p>
+    <div class="wd">${[1,2,3,4,5,6,0].map(i=>`<button class="chip ${S.closedWeekdays.includes(i)?"on":""}" onclick="tgWd(${i})">${TR_DS[i]}</button>`).join("")}</div>
+    <p style="color:var(--mut);font-size:13.5px;margin:18px 0 10px">Tatil / izin günleri</p>
+    <div>${S.closed.length?[...S.closed].sort().map(c=>`<span class="tag">${fd(c)}<button onclick="rmClosed('${c}')">×</button></span>`).join(""):`<span style="color:var(--mut);font-size:13.5px">Eklenmiş izin günü yok.</span>`}</div>
+    <div class="frow"><input class="in" type="date" id="nc" min="${today}"><button class="btn" onclick="addClosed()">Günü kapat</button></div></div>
+  </div>
+  <div class="card" style="margin-top:16px"><h3>Panel yetkilileri</h3>
+    <p style="color:var(--mut);font-size:13.5px;margin-bottom:12px">Bu Gmail adresleri panele Google ile giriş yapabilir.</p>
+    <div><span class="tag">mehmetyildirmm@gmail.com · kurucu</span>${RA.A.map(a=>`<span class="tag">${esc(a)}<button title="Kaldır" onclick="rmAdmin('${esc(a)}')">×</button></span>`).join("")}</div>
+    <div class="frow"><input class="in" type="email" id="na" placeholder="ornek@gmail.com"><button class="btn" onclick="addAdmin()">Yetki ver</button></div></div>`;
+}
+const saveS=()=>db.doc("settings/main").set({times:RA.S.times,closedWeekdays:RA.S.closedWeekdays,closed:RA.S.closed}).catch(fail);
+const upS=f=>{f(RA.S);render();return saveS()};
+function rmTime(t){upS(S=>S.times=S.times.filter(x=>x!==t)).then(()=>toast(t+" kaldırıldı"))}
+function addTime(){const v=$("nt").value;if(!v)return;upS(S=>{if(!S.times.includes(v))S.times=[...S.times,v].sort()}).then(()=>toast(v+" eklendi"))}
+function tgWd(i){upS(S=>S.closedWeekdays=S.closedWeekdays.includes(i)?S.closedWeekdays.filter(x=>x!==i):[...S.closedWeekdays,i])}
+function addClosed(){const v=$("nc").value;if(!v)return;upS(S=>{if(!S.closed.includes(v))S.closed=[...S.closed,v]}).then(()=>toast(fd(v)+" kapatıldı"))}
+function rmClosed(c){upS(S=>S.closed=S.closed.filter(x=>x!==c))}
+function addAdmin(){const e=$("na").value.trim().toLowerCase();if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e)){toast("Geçerli bir e-posta yazın");return}db.doc("admins/"+e).set({added:FV.serverTimestamp(),by:USER.email}).then(()=>toast(e+" yetkilendirildi")).catch(fail)}
+function rmAdmin(e){db.doc("admins/"+e).delete().then(()=>toast(e+" kaldırıldı")).catch(fail)}
+
+/* RANDEVU EKLE / DÜZENLE */
+function editB(id,date,time){
+  const S=RA.S,b=id?RA.B.find(x=>x.id===id):{name:"",phone:"",svc:"an",date:date||today,time:time||S.times[0],status:"onaylı",note:""};
+  $("md").innerHTML=`<h3>${id?"Randevuyu düzenle":"Yeni randevu"}</h3>
+   <label>Ad Soyad</label><input class="in" id="fN" value="${esc(b.name)}">
+   <label>Telefon</label><input class="in" id="fP" inputmode="tel" placeholder="05xx xxx xx xx" value="${esc(telFmt(b.phone))}">
+   <label>Hizmet</label><select class="in" id="fS">${Object.entries(RA.SVCN).map(([k,v])=>`<option value="${k}" ${b.svc===k?"selected":""}>${v} · ${RA.SVCD[k]} dk</option>`).join("")}</select>
+   <div class="two"><div><label>Tarih</label><input class="in" type="date" id="fD" value="${b.date}"></div><div><label>Saat</label><select class="in" id="fT">${[...new Set([...S.times,b.time])].sort().map(t=>`<option ${t===b.time?"selected":""}>${t}</option>`).join("")}</select></div></div>
+   <label>Durum</label><select class="in" id="fSt">${["bekliyor","onaylı","tamamlandı","iptal"].map(s=>`<option ${b.status===s?"selected":""}>${s}</option>`).join("")}</select>
+   <label>Not</label><textarea class="in" id="fNo" rows="2" placeholder="Renk, uzunluk, özel istek…">${esc(b.note)}</textarea>
+   <div class="err" id="fE"></div>
+   <div class="end"><button class="btn ghost" onclick="closeM()">Vazgeç</button><button class="btn gold" id="fSave" onclick="saveB('${id||""}')">Kaydet</button></div>`;
+  $("ov").hidden=false;$("fN").focus();
+}
+function closeM(){$("ov").hidden=true;render()}
+$("ov").onclick=e=>{if(e.target===$("ov"))closeM()};
+addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("ov").hidden)closeM()});
+function saveB(id){
+  const name=$("fN").value.trim().slice(0,80),phone=normPhone($("fP").value);
+  if(!name){$("fE").textContent="İsim gerekli.";return}
+  const date=$("fD").value,time=$("fT").value,status=$("fSt").value;
+  if(!date){$("fE").textContent="Tarih seçin.";return}
+  if(status!=="iptal"&&busyAt(date,time,id)){$("fE").textContent="Bu saatte başka bir randevu var.";return}
+  const v={name,phone,svc:$("fS").value,date,time,status,note:$("fNo").value.trim().slice(0,300),slot:date+"_"+time};
+  const batch=db.batch();
+  if(id){
+    const old=RA.B.find(x=>x.id===id),oldActive=old.status!=="iptal",newActive=status!=="iptal",moved=slotOf(old)!==v.slot;
+    if(oldActive&&(moved||!newActive))batch.delete(db.doc("slots/"+slotOf(old)));
+    if(newActive&&(moved||!oldActive))batch.set(db.doc("slots/"+v.slot),{b:id});
+    batch.update(db.doc("bookings/"+id),v);
+  }else{
+    const ref=db.collection("bookings").doc();
+    batch.set(ref,{...v,src:"telefon",created:FV.serverTimestamp()});
+    if(status!=="iptal")batch.set(db.doc("slots/"+v.slot),{b:ref.id});
+  }
+  $("fSave").disabled=true;
+  batch.commit().then(()=>{closeM();toast(id?"Randevu güncellendi":"Randevu eklendi")}).catch(e=>{$("fSave").disabled=false;fail(e)});
+}
+setInterval(()=>{const t=ymd(new Date());if(t!==today&&$("ov").hidden&&!$("app").hidden)render()},60000);
+</script>
+</body>
+</html>
