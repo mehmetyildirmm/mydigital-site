@@ -187,6 +187,16 @@ section{padding-block:72px}
 @media (max-width:480px){.form .two{grid-template-columns:1fr}.call,.form{padding:24px}}
 
 
+/* yorumlar */
+.quotes{display:flex;flex-wrap:wrap;justify-content:center;gap:18px}.quotes .quote{flex:0 1 calc(33.333% - 12px)}
+.quote{margin:0;display:flex;flex-direction:column;gap:14px;padding:24px;border-radius:22px;background:linear-gradient(180deg,var(--panel),var(--bg-2));box-shadow:inset 0 0 0 1px var(--line)}
+.quote .stars{color:#FFC24A;letter-spacing:3px;font-size:15px}
+.quote blockquote{margin:0;color:var(--ink);font-size:15.5px;line-height:1.6;flex:1}
+.quote figcaption{display:flex;align-items:center;gap:12px;padding-top:14px;border-top:1px solid var(--line)}
+.quote .av{width:42px;height:42px;flex:none;border-radius:50%;display:grid;place-items:center;font:900 14px/1 var(--display);color:#fff;background:radial-gradient(circle at 35% 30%,var(--cyan),var(--blue) 70%)}
+.quote b{display:block;font-size:15px}.quote small{display:block;color:var(--muted);font-size:12.5px}
+@media (max-width:980px){.quotes .quote{flex-basis:calc(50% - 9px)}}
+@media (max-width:620px){.quotes .quote{flex-basis:100%}}
 /* paketler */
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
 .plan{position:relative;display:flex;flex-direction:column;gap:18px;padding:30px 26px;border-radius:24px;background:linear-gradient(180deg,var(--panel),var(--bg-2));box-shadow:inset 0 0 0 1px var(--line)}
@@ -428,6 +438,20 @@ footer .script{font-size:26px;text-align:right}
         <div><b>Daha fazla satış</b><span>Doğru kanala doğru bütçe.</span></div>
         <div><b>Profesyonel destek</b><span>Her adımda yanınızdayız.</span></div>
       </div>
+    </div>
+  </section>
+
+  <section id="yorumlar" aria-labelledby="h-yor">
+    <div class="head center">
+      <span class="kicker both">Müşteri yorumları</span>
+      <h2 id="h-yor">Birlikte çalıştığımız markalar ne diyor?</h2>
+    </div>
+    <div class="quotes">
+      <figure class="quote"><div class="stars" aria-label="5 üzerinden 5">★★★★★</div><blockquote>“Google İşletme Profilimizi Mehmet Bey'in desteğiyle baştan sona düzenledik; doğrulama sürecimizi adım adım yönetiyor. Hızlı ve ilgili, tavsiye ederim.”</blockquote><figcaption><span class="av">ED</span><span><b>Enes Demirkol</b><small>Enes Demirkol Hair Design</small></span></figcaption></figure>
+      <figure class="quote"><div class="stars" aria-label="5 üzerinden 5">★★★★★</div><blockquote>“Meta reklamlarımızı Mehmet Bey yönetiyor. Randevu ve satış taleplerimiz düzenli geliyor; her şeyi açıkça anlatıyor, ulaşması çok kolay.”</blockquote><figcaption><span class="av">RA</span><span><b>Rabia Aliefendioğlu</b><small>Saç uzatma & satış</small></span></figcaption></figure>
+      <figure class="quote"><div class="stars" aria-label="5 üzerinden 5">★★★★★</div><blockquote>“Kampanya görsellerimizi ve Instagram hesabımızı Mehmet Yıldırım Digital yönetiyor. Kampanyalarımız artık çok daha profesyonel görünüyor.”</blockquote><figcaption><span class="av">AB</span><span><b>Altunbaş Beko</b><small>Beyaz eşya mağazası</small></span></figcaption></figure>
+      <figure class="quote"><div class="stars" aria-label="5 üzerinden 5">★★★★★</div><blockquote>“Online mağazamızı sıfırdan kurdular. Kategoriler, kampanyalar, sepet ve üyelik sistemi sorunsuz çalışıyor.”</blockquote><figcaption><span class="av">S3</span><span><b>sepette365.com</b><small>Online mağaza</small></span></figcaption></figure>
+      <figure class="quote"><div class="stars" aria-label="5 üzerinden 5">★★★★★</div><blockquote>“Reklamlarımızı Mehmet Bey yürütüyor. Doğru kitleye ulaşıyoruz ve bize gelen mesaj sayısı arttı.”</blockquote><figcaption><span class="av">SH</span><span><b>Sindoma Hair Turkey</b><small>Hair Extension Turkey · Hair Extensions İstanbul</small></span></figcaption></figure>
     </div>
   </section>
 
