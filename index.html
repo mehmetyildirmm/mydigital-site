@@ -174,6 +174,35 @@ footer .script{font-size:26px;text-align:right}
 .wa-float{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:40;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#fff;box-shadow:0 12px 30px -8px rgba(37,211,102,.7)}
 .wa-float svg{width:30px;height:30px}
 .toast{position:fixed;left:50%;bottom:calc(90px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:50;background:#fff;color:#061427;padding:12px 18px;border-radius:999px;font-weight:800;font-size:14px}
+
+/* referanslar */
+.refs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.ref{position:relative;display:flex;flex-direction:column;gap:14px;padding:26px;border-radius:22px;background:linear-gradient(180deg,var(--panel),var(--bg-2));box-shadow:inset 0 0 0 1px var(--line);text-decoration:none;transition:transform .25s,box-shadow .25s;overflow:hidden}
+.ref:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1px var(--line-2),0 22px 50px -24px var(--glow)}
+.ref .top{display:flex;align-items:center;gap:14px}
+.ref .ic{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;flex:none;color:#fff}
+.ref .ic svg{width:26px;height:26px}
+.ref .ic.web{background:linear-gradient(135deg,var(--blue),var(--cyan))}
+.ref .ic.ig{background:radial-gradient(circle at 30% 107%,#fdf497 0,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%)}
+.ref h3{font-size:21px;line-height:1.15;font-weight:800;word-break:break-word}
+.ref small{display:block;font:600 11.5px/1 var(--brand);letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);margin-bottom:6px}
+.ref p{color:var(--muted);font-size:15px}
+.ref .stats{display:flex;gap:22px;margin-top:auto;padding-top:14px;border-top:1px solid rgba(34,73,127,.5)}
+.ref .stats b{display:block;font:900 24px/1 var(--display);color:var(--ink)}
+.ref .stats span{font-size:12.5px;color:var(--dim)}
+.ref .go{position:absolute;top:24px;right:24px;color:var(--dim);font-size:20px;transition:color .2s,transform .2s}
+.ref:hover .go{color:var(--cyan);transform:translate(3px,-3px)}
+.concepts-h{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:56px 0 20px;flex-wrap:wrap}
+.concepts-h h3{font-size:clamp(22px,2.6vw,30px);font-weight:900}
+.concepts-h p{color:var(--muted);font-size:15px;max-width:52ch}
+.concepts{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.concept{margin:0;border-radius:18px;overflow:hidden;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);transition:transform .25s,box-shadow .25s}
+.concept:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1px var(--line-2),0 22px 50px -24px var(--glow)}
+.concept img{width:100%;height:auto;aspect-ratio:9/16;object-fit:cover}
+.concept figcaption{padding:12px 14px;font-size:13.5px;font-weight:700}
+.concept figcaption span{display:block;font-weight:500;color:var(--dim);font-size:12px;margin-top:2px}
+@media (max-width:980px){.refs{grid-template-columns:1fr 1fr}.refs .ref:first-child{grid-column:1/-1}.concepts{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin-inline:-20px;padding-inline:20px}.concept{flex:0 0 200px;scroll-snap-align:start}}
+@media (max-width:620px){.refs{grid-template-columns:1fr}}
 </style>
 
 </head>
@@ -200,6 +229,7 @@ footer .script{font-size:26px;text-align:right}
       <a href="#sosyal">Sosyal Medya</a>
       <a href="#meta">Meta Reklam</a>
       <a href="#eticaret">E-Ticaret</a>
+      <a href="#referanslar">Referanslar</a>
       <a href="#iletisim">İletişim</a>
     </nav>
     <a class="btn sm" href="#iletisim">Teklif Al</a>
@@ -300,6 +330,45 @@ footer .script{font-size:26px;text-align:right}
         <div><b>Daha fazla satış</b><span>Doğru kanala doğru bütçe.</span></div>
         <div><b>Profesyonel destek</b><span>Her adımda yanınızdayız.</span></div>
       </div>
+    </div>
+  </section>
+
+  <section id="referanslar" aria-labelledby="h-ref">
+    <div class="head">
+      <span class="kicker">Referanslar</span>
+      <h2 id="h-ref">Yönettiğimiz markalar ve çalışmalarımız</h2>
+      <p>Kurduğumuz e-ticaret sitesi ve her gün yönettiğimiz sosyal medya hesapları.</p>
+    </div>
+    <div class="refs">
+      <a class="ref" href="https://sepette365.com" target="_blank" rel="noopener">
+        <span class="go" aria-hidden="true">↗</span>
+        <div class="top"><span class="ic web"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.6 12.2a1.5 1.5 0 0 0 1.5 1.2h8.7a1.5 1.5 0 0 0 1.5-1.1L21 8H6"/></svg></span><div><small>Web tasarım · E-ticaret</small><h3>sepette365.com</h3></div></div>
+        <p>Beko yetkili satıcısının online mağazası. Sitenin tasarımı, kurulumu ve ürün altyapısı.</p>
+        <div class="stats"><div><b>Online</b><span>satış sitesi</span></div><div><b>Web</b><span>tasarım &amp; kurulum</span></div></div>
+      </a>
+      <a class="ref" href="https://www.instagram.com/sepette365/" target="_blank" rel="noopener">
+        <span class="go" aria-hidden="true">↗</span>
+        <div class="top"><span class="ic ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span><div><small>Sosyal medya yönetimi</small><h3>@sepette365</h3></div></div>
+        <p>Sepette365 Instagram hesabının içerik üretimi ve yönetimi.</p>
+        <div class="stats"><div><b>600+</b><span>gönderi</span></div><div><b>4,8B+</b><span>takipçi</span></div></div>
+      </a>
+      <a class="ref" href="https://www.instagram.com/altunbas.beko/" target="_blank" rel="noopener">
+        <span class="go" aria-hidden="true">↗</span>
+        <div class="top"><span class="ic ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span><div><small>Sosyal medya yönetimi</small><h3>@altunbas.beko</h3></div></div>
+        <p>Altunbaş Beko fabrika satış mağazasının Instagram hesabı: kampanya görselleri ve içerik yönetimi.</p>
+        <div class="stats"><div><b>590+</b><span>gönderi</span></div><div><b>61B+</b><span>takipçi</span></div></div>
+      </a>
+    </div>
+    <div class="concepts-h">
+      <h3>Konsept tasarımlar</h3>
+      <p>Farklı sektörler için hazırladığımız e-ticaret site konseptleri. Markanıza özel tasarlanır.</p>
+    </div>
+    <div class="concepts">
+      <figure class="concept"><a href="ref-sac.webp" target="_blank" rel="noopener"><img src="ref-sac.webp" alt="Saç satış + randevu site konsepti" width="288" height="512" loading="lazy"></a><figcaption>Saç satış + randevu<span>Online satış ve salon randevusu</span></figcaption></figure>
+      <figure class="concept"><a href="ref-beyaz-esya.webp" target="_blank" rel="noopener"><img src="ref-beyaz-esya.webp" alt="Beyaz eşya mağazası site konsepti" width="288" height="512" loading="lazy"></a><figcaption>Beyaz eşya mağazası<span>Taksit ve kampanya odaklı</span></figcaption></figure>
+      <figure class="concept"><a href="ref-elektronik.webp" target="_blank" rel="noopener"><img src="ref-elektronik.webp" alt="Elektronik mağazası site konsepti" width="288" height="512" loading="lazy"></a><figcaption>Elektronik mağazası<span>Hızlı, mobil uyumlu vitrin</span></figcaption></figure>
+      <figure class="concept"><a href="ref-mobilya.webp" target="_blank" rel="noopener"><img src="ref-mobilya.webp" alt="Mobilya markası site konsepti" width="288" height="512" loading="lazy"></a><figcaption>Mobilya markası<span>Butik e-ticaret</span></figcaption></figure>
+      <figure class="concept"><a href="ref-kozmetik.webp" target="_blank" rel="noopener"><img src="ref-kozmetik.webp" alt="Kozmetik markası site konsepti" width="288" height="512" loading="lazy"></a><figcaption>Kozmetik markası<span>Marka kimliğine özel tasarım</span></figcaption></figure>
     </div>
   </section>
 
