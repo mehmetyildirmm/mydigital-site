@@ -55,7 +55,8 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;margin-inline
 .links{display:flex;gap:28px;font:600 14.5px/1 var(--body)}
 .links a{text-decoration:none;color:var(--muted);transition:color .15s}
 .links a:hover{color:#fff}
-@media (max-width:900px){.links{display:none}}
+.links a{white-space:nowrap}.btn{white-space:nowrap}
+@media (max-width:1240px){.links{display:none}}
 @media (max-width:420px){.brand .wm{display:none}}
 
 /* hero */
@@ -165,6 +166,43 @@ section{padding-block:72px}
 @media (max-width:880px){.contact{grid-template-columns:1fr}}
 @media (max-width:480px){.form .two{grid-template-columns:1fr}.call,.form{padding:24px}}
 
+
+/* paketler */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.plan{position:relative;display:flex;flex-direction:column;gap:18px;padding:30px 26px;border-radius:24px;background:linear-gradient(180deg,var(--panel),var(--bg-2));box-shadow:inset 0 0 0 1px var(--line)}
+.plan.hot{box-shadow:inset 0 0 0 1.5px var(--cyan),0 30px 70px -34px var(--glow)}
+.plan .tag{position:absolute;top:-13px;left:26px;background:linear-gradient(135deg,var(--cyan),var(--blue));color:#fff;font:800 12px/1 var(--body);padding:8px 13px;border-radius:999px;letter-spacing:.02em}
+.plan small{font:500 12px/1 var(--brand);letter-spacing:.28em;text-transform:uppercase;color:var(--cyan)}
+.plan h3{font-size:24px}
+.plan .price{font:900 40px/1 var(--display);letter-spacing:-.02em}.plan .price span{display:block;font:600 14px/1.3 var(--body);color:var(--muted);margin-top:8px;letter-spacing:0}
+.plan .desc{color:var(--muted);font-size:15px}
+.plan ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:15px}
+.plan li{display:flex;gap:10px;align-items:flex-start}.plan li svg{width:18px;height:18px;flex:none;margin-top:3px;color:var(--cyan)}
+.plan .btn{margin-top:auto}
+.plans-note{margin-top:22px;display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center;padding:20px 24px;border-radius:18px;box-shadow:inset 0 0 0 1px var(--line);color:var(--muted);font-size:15px}
+.plans-note b{color:var(--ink)}
+@media (max-width:980px){.plans{grid-template-columns:1fr;max-width:520px;margin-inline:auto}}
+/* hakkimda */
+.about{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+.about .photo{position:relative;border-radius:28px;overflow:hidden;box-shadow:0 0 0 1px var(--line-2),0 40px 80px -40px var(--glow)}
+.about .photo img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.about .photo figcaption{position:absolute;left:18px;bottom:18px;right:18px;padding:14px 16px;border-radius:16px;background:rgba(2,11,26,.72);backdrop-filter:blur(8px);box-shadow:inset 0 0 0 1px var(--line-2)}
+.about .photo figcaption b{display:block;font:900 20px/1.1 var(--display)}.about .photo figcaption span{font-size:13px;color:var(--muted)}
+.about .story{display:grid;gap:16px;color:var(--muted);font-size:17px}
+.about .story p strong{color:var(--ink)}
+.about .sign{font:700 34px/1 var(--script);color:var(--silver);margin-top:4px}
+.vals{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px}
+.vals div{padding:16px;border-radius:16px;box-shadow:inset 0 0 0 1px var(--line);background:var(--panel)}
+.vals b{display:block;color:var(--ink);font-size:15px}.vals span{font-size:13.5px}
+.igs{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.igs a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;padding:10px 16px 10px 10px;border-radius:999px;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line-2);color:var(--ink);font-weight:700;font-size:15px;transition:box-shadow .15s,transform .15s}
+.igs a:hover{box-shadow:inset 0 0 0 1.5px var(--cyan);transform:translateY(-2px)}
+.igs .i{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(45deg,#F58529,#DD2A7B 45%,#8134AF 75%,#515BD4);color:#fff}.igs .i svg{width:18px;height:18px}
+.igs small{display:block;font-weight:500;font-size:12px;color:var(--dim);line-height:1.2}
+@media (max-width:880px){.about{grid-template-columns:1fr;gap:32px}.about .photo{max-width:420px}}
+@media (max-width:560px){.vals{grid-template-columns:1fr}}
+footer .legal{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13.5px}
+footer .legal a{color:var(--muted);text-decoration:none}footer .legal a:hover{color:var(--cyan)}
 footer{margin-top:40px;padding-block:44px 52px;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center}
 footer .logo{width:120px;border-radius:50%}
 footer .info{display:grid;gap:8px;color:var(--muted);font-size:14px}
@@ -246,7 +284,9 @@ footer .script{font-size:26px;text-align:right}
       <a href="#sosyal">Sosyal Medya</a>
       <a href="#meta">Meta Reklam</a>
       <a href="#eticaret">E-Ticaret</a>
+      <a href="#paketler">Paketler</a>
       <a href="#referanslar">Referanslar</a>
+      <a href="#hakkimda">Hakkımda</a>
       <a href="#iletisim">İletişim</a>
     </nav>
     <a class="btn sm" href="#iletisim">Teklif Al</a>
@@ -350,6 +390,42 @@ footer .script{font-size:26px;text-align:right}
     </div>
   </section>
 
+  <section id="paketler" aria-labelledby="h-pak">
+    <div class="head">
+      <span class="kicker">Paketler &amp; fiyatlar</span>
+      <h2 id="h-pak">İhtiyacınıza uygun paketi seçin</h2>
+      <p>Şeffaf fiyatlar, sürpriz maliyet yok. Her proje markanıza özel hazırlanır; kesin fiyatı kısa bir görüşmeden sonra netleştiririz.</p>
+    </div>
+    <div class="plans">
+      <article class="plan">
+        <div><small>Başlangıç</small><h3>Kurumsal Web Sitesi</h3></div>
+        <div class="price">20.000 ₺<span>'den başlayan fiyatlarla · +KDV</span></div>
+        <p class="desc">İşletmenizi internette profesyonelce tanıtan, hızlı ve mobil uyumlu site.</p>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.2 4.2L19 7"/></svg>5 sayfaya kadar kurumsal site</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Mobil uyumlu, hızlı açılan tasarım</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.2 4.2L19 7"/></svg>WhatsApp, arama ve konum butonları</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Google Haritalar ve iletişim formu</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Alan adı, SSL ve yayına alma kurulumu</li></ul>
+        <a class="btn ghost" href="https://wa.me/905524103009?text=Merhaba,%20Başlangıç%20paketi%20(Kurumsal%20Web%20Sitesi)%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">Bilgi al</a>
+      </article>
+      <article class="plan hot">
+        <span class="tag">En çok tercih edilen</span>
+        <div><small>Profesyonel</small><h3>Yönetim Panelli Site</h3></div>
+        <div class="price">35.000 ₺<span>'den başlayan fiyatlarla · +KDV</span></div>
+        <p class="desc">Randevu, sipariş ve müşteri takibini tek panelden yönettiğiniz, satış odaklı site.</p>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Başlangıç paketindeki her şey</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Online randevu veya sipariş sistemi</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Randevu ve sipariş yönetim paneli</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Temel SEO ve Google İşletme Profili kurulumu</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Instagram ve Meta reklam entegrasyonu</li></ul>
+        <a class="btn" href="https://wa.me/905524103009?text=Merhaba,%20Profesyonel%20paket%20(Yönetim%20Panelli%20Site)%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">Teklif al <svg><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="plan">
+        <div><small>E-ticaret</small><h3>Online Mağaza</h3></div>
+        <div class="price">50.000 ₺<span>'den başlayan fiyatlarla · +KDV</span></div>
+        <p class="desc">Ürünlerinizi 7/24 satan, ödeme ve kargo altyapısı hazır e-ticaret sitesi.</p>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Sınırsız ürün, kategori ve kampanya yönetimi</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Sepet, üyelik ve sipariş takibi</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Sanal POS ile kartla ödeme altyapısı</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Kargo ve fatura süreçlerine uyum</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.2 4.2L19 7"/></svg>Pazaryeri entegrasyonlarına hazır altyapı</li></ul>
+        <a class="btn ghost" href="https://wa.me/905524103009?text=Merhaba,%20E-ticaret%20paketi%20(Online%20Mağaza)%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">Bilgi al</a>
+      </article>
+    </div>
+    <div class="plans-note">
+      <span><b>Sosyal medya ve Meta reklam yönetimi</b> aylık paketler halinde sunulur. İhtiyacınıza göre fiyatlandırılır.</span>
+      <a class="btn sm" href="https://wa.me/905524103009?text=Merhaba,%20sosyal%20medya%20ve%20Meta%20reklam%20yönetimi%20için%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener">Aylık paket teklifi al</a>
+    </div>
+  </section>
+
   <section id="referanslar" aria-labelledby="h-ref">
     <div class="head">
       <span class="kicker">Referanslar</span>
@@ -433,6 +509,32 @@ footer .script{font-size:26px;text-align:right}
     </div>
   </section>
 
+  <section id="hakkimda" aria-labelledby="h-hak">
+    <div class="about">
+      <figure class="photo">
+        <img src="mehmet.webp" alt="Mehmet Yıldırım, Mehmet Yıldırım Digital kurucusu" width="720" height="900" loading="lazy">
+        <figcaption><b>Mehmet Yıldırım</b><span>Kurucu · Mehmet Yıldırım Digital</span></figcaption>
+      </figure>
+      <div class="story">
+        <span class="kicker">Hakkımda</span>
+        <h2 id="h-hak" style="font-size:clamp(30px,4.2vw,48px);line-height:1.04;font-weight:900;color:var(--ink)">Perakendenin içinden gelen bir dijital ajans</h2>
+        <p>Merhaba, ben <strong>Mehmet Yıldırım</strong>. İşe bir Beko mağazasında başladım: kampanyaları kurguluyor, tanıtım görsellerini hazırlıyor, müşterinin mağazaya nasıl geldiğini her gün yakından görüyordum. Oradan öğrendiğim tek bir şey var: <strong>iyi bir ürün, doğru anlatılmadıkça satmaz.</strong></p>
+        <p>Mehmet Yıldırım Digital'i bu yüzden kurdum. Beko yetkili satıcısı için <strong>sepette365.com</strong>'u sıfırdan kurdum; Altunbaş Beko ve sepette365'in Instagram hesaplarını yönetiyorum. Saç ekleme markalarından mahalle berberine kadar farklı sektörlerdeki işletmelerin Meta reklamlarını yürütüyorum.</p>
+        <p>Benimle çalıştığınızda karşınızda bir çağrı merkezi değil, <strong>işinizi bizzat üstlenen biri</strong> olur: telefonu açan da, tasarımı yapan da, sonuçları size raporlayan da benim.</p>
+        <div class="vals">
+          <div><b>Tek muhatap</b><span>Projenizi baştan sona aynı kişi yürütür.</span></div>
+          <div><b>Şeffaf fiyat</b><span>Ne ödediğinizi ve ne aldığınızı bilirsiniz.</span></div>
+          <div><b>Sonuç odaklı</b><span>Güzel görünmek yetmez, satış getirmeli.</span></div>
+        </div>
+        <div class="igs">
+          <a href="https://www.instagram.com/mehmetyildirimdigital/" target="_blank" rel="noopener"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span><span>@mehmetyildirimdigital<small>Ajans hesabı</small></span></a>
+          <a href="https://www.instagram.com/mehmetyildrimm/" target="_blank" rel="noopener"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span><span>@mehmetyildrimm<small>Kişisel hesap</small></span></a>
+        </div>
+        <span class="sign">Mehmet Yıldırım</span>
+      </div>
+    </div>
+  </section>
+
   <section aria-labelledby="h-surec">
     <div class="head">
       <span class="kicker">Çalışma sürecimiz</span>
@@ -492,7 +594,9 @@ footer .script{font-size:26px;text-align:right}
     <div class="info">
       <b>MEHMET YILDIRIM DIGITAL</b>
       <span>Web Tasarım · Sosyal Medya · Meta Reklam · E-Ticaret Entegrasyonu · Dijital Strateji</span>
-      <span>İş birlikleri: 0552 410 30 09 · © 2026</span>
+      <span>İş birlikleri: 0552 410 30 09 · <a href="mailto:info@mydigital.net.tr" style="color:inherit">info@mydigital.net.tr</a></span>
+      <span class="legal"><a href="https://www.instagram.com/mehmetyildirimdigital/" target="_blank" rel="noopener">Instagram @mehmetyildirimdigital</a><a href="https://www.instagram.com/mehmetyildrimm/" target="_blank" rel="noopener">@mehmetyildrimm</a><a href="gizlilik.html">Gizlilik &amp; KVKK</a><a href="gizlilik.html#cerez">Çerez politikası</a></span>
+      <span>© 2026 Mehmet Yıldırım Digital · Tüm hakları saklıdır.</span>
     </div>
     <span class="script">Markanız için daha fazlası</span>
   </footer>
