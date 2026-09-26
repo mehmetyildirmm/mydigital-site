@@ -56,7 +56,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;margin-inline
 .links a{text-decoration:none;color:var(--muted);transition:color .15s}
 .links a:hover{color:#fff}
 .links a{white-space:nowrap}.btn{white-space:nowrap}
-@media (max-width:1240px){.links{display:none}}
+@media (max-width:1320px){.links{display:none}}
 @media (max-width:420px){.brand .wm{display:none}}
 
 /* hero */
@@ -83,13 +83,13 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;margin-inline
 @media (max-width:880px){.hero{grid-template-columns:1fr;padding-block:44px}.hero::before{right:-50%;top:62%}}
 
 /* service rail */
-.rail{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:24px}
+.rail{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:24px}
 .rail a{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;text-decoration:none;padding:20px 12px;border-radius:18px;background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);font:800 13.5px/1.2 var(--body);letter-spacing:.02em;text-transform:uppercase;transition:border-color .2s,transform .2s}
 .rail a:hover{border-color:var(--cyan);transform:translateY(-3px)}
 .ic{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;color:#fff;background:radial-gradient(circle at 35% 30%,var(--cyan),var(--blue) 70%);box-shadow:0 0 22px -2px var(--glow)}
 .ic svg{width:26px;height:26px}
 @media (max-width:900px){.rail{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:560px){.rail{grid-template-columns:repeat(2,1fr)}.rail a:last-child{grid-column:1/-1}}
+@media (max-width:560px){.rail{grid-template-columns:repeat(2,1fr)}.rail a:last-child{grid-column:auto}}
 
 /* service features */
 section{padding-block:72px}
@@ -106,6 +106,12 @@ section{padding-block:72px}
 .shot .badge{position:absolute;left:14px;top:14px;display:flex;align-items:center;gap:8px;padding:8px 12px 8px 8px;border-radius:999px;background:rgba(2,11,26,.78);backdrop-filter:blur(8px);font:800 12px/1 var(--body);letter-spacing:.06em;text-transform:uppercase}
 .shot .badge .ic{width:28px;height:28px}
 .shot .badge .ic svg{width:15px;height:15px}
+.shot.film{aspect-ratio:4/5;background:radial-gradient(120% 90% at 70% 10%,rgba(53,184,255,.35),transparent 55%),radial-gradient(100% 80% at 10% 100%,rgba(30,123,255,.35),transparent 60%),linear-gradient(160deg,#0A2347,#020B1A)}
+.film-in{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:10px;text-align:center;padding:24px}
+.film-in::before{content:"";position:absolute;inset:18px;border-radius:16px;background:linear-gradient(var(--cyan),var(--cyan)) left top/22px 2px,linear-gradient(var(--cyan),var(--cyan)) left top/2px 22px,linear-gradient(var(--cyan),var(--cyan)) right top/22px 2px,linear-gradient(var(--cyan),var(--cyan)) right top/2px 22px,linear-gradient(var(--cyan),var(--cyan)) left bottom/22px 2px,linear-gradient(var(--cyan),var(--cyan)) left bottom/2px 22px,linear-gradient(var(--cyan),var(--cyan)) right bottom/22px 2px,linear-gradient(var(--cyan),var(--cyan)) right bottom/2px 22px;background-repeat:no-repeat;opacity:.8}
+.film-in .big{width:110px;height:110px;color:#fff;filter:drop-shadow(0 0 24px var(--glow))}
+.film-in b{font:900 24px/1.1 var(--display);color:#fff}.film-in span{color:var(--muted);font-size:14px}
+.film-in .rec{position:absolute;top:34px;right:36px;font:800 12px/1 var(--body);color:#ff4d5e;letter-spacing:.1em}
 .copy{display:grid;gap:18px}
 .copy .script{font-size:30px}
 .copy h3{font-size:clamp(30px,3.8vw,46px);line-height:1.02;font-weight:900;text-transform:uppercase}
@@ -183,14 +189,14 @@ section{padding-block:72px}
 .plans-note b{color:var(--ink)}
 @media (max-width:980px){.plans{grid-template-columns:1fr;max-width:520px;margin-inline:auto}}
 /* hakkimda */
-.about{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}.about .photo{position:sticky;top:100px}
 .about .photo{position:relative;border-radius:28px;overflow:hidden;box-shadow:0 0 0 1px var(--line-2),0 40px 80px -40px var(--glow)}
 .about .photo img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(1) contrast(1.05)}
 .about .photo figcaption{position:absolute;left:18px;bottom:18px;right:18px;padding:14px 16px;border-radius:16px;background:rgba(2,11,26,.72);backdrop-filter:blur(8px);box-shadow:inset 0 0 0 1px var(--line-2)}
 .about .photo figcaption b{display:block;font:900 20px/1.1 var(--display)}.about .photo figcaption span{font-size:13px;color:var(--muted)}
-.about .story{display:grid;gap:16px;color:var(--muted);font-size:17px}
+.about .story{display:grid;gap:14px;color:var(--muted);font-size:16px}
 .about .story p strong{color:var(--ink)}
-.about .sign{font:700 34px/1 var(--script);color:var(--silver);margin-top:4px}
+.about .sign{font:700 28px/1.2 var(--script);color:var(--silver);margin-top:4px}
 .vals{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px}
 .vals div{padding:16px;border-radius:16px;box-shadow:inset 0 0 0 1px var(--line);background:var(--panel)}
 .vals b{display:block;color:var(--ink);font-size:15px}.vals span{font-size:13.5px}
@@ -199,7 +205,7 @@ section{padding-block:72px}
 .igs a:hover{box-shadow:inset 0 0 0 1.5px var(--cyan);transform:translateY(-2px)}
 .igs .i{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(45deg,#F58529,#DD2A7B 45%,#8134AF 75%,#515BD4);color:#fff}.igs .i svg{width:18px;height:18px}
 .igs small{display:block;font-weight:500;font-size:12px;color:var(--dim);line-height:1.2}
-@media (max-width:880px){.about{grid-template-columns:1fr;gap:32px}.about .photo{max-width:420px}}
+@media (max-width:880px){.about{grid-template-columns:1fr;gap:32px}.about .photo{max-width:420px;position:relative;top:0}}
 @media (max-width:560px){.vals{grid-template-columns:1fr}}
 footer .legal{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13.5px}
 footer .legal a{color:var(--muted);text-decoration:none}footer .legal a:hover{color:var(--cyan)}
@@ -270,6 +276,7 @@ footer .script{font-size:26px;text-align:right}
   <symbol id="i-growth" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20v-5M10 20v-8M15 20v-6M20 20v-10"/><path d="M4 10l6-4 4 3 6-6M16 3h4v4"/></symbol>
   <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
   <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2a9.7 9.7 0 0 0-8.3 14.7L2.3 21.8l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.7c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.8 2c0 1.2.9 2.3 1 2.5.1.2 1.7 2.6 4.2 3.7 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.5-.2z"/></symbol>
+  <symbol id="i-drone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9.3" y="9.8" width="5.4" height="4.4" rx="1.3"/><path d="M9.4 10.4 6.6 7.4M14.6 10.4l2.8-3M9.4 13.6l-2.8 3M14.6 13.6l2.8 3"/><ellipse cx="5.6" cy="6.6" rx="3" ry="1.1"/><ellipse cx="18.4" cy="6.6" rx="3" ry="1.1"/><ellipse cx="5.6" cy="17.4" rx="3" ry="1.1"/><ellipse cx="18.4" cy="17.4" rx="3" ry="1.1"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
 </svg>
 
@@ -286,7 +293,7 @@ footer .script{font-size:26px;text-align:right}
       <a href="#eticaret">E-Ticaret</a>
       <a href="#paketler">Paketler</a>
       <a href="#referanslar">Referanslar</a>
-      <a href="#hakkimda">Hakkımda</a>
+      <a href="#hakkimda">Hakkımızda</a>
       <a href="#iletisim">İletişim</a>
     </nav>
     <a class="btn sm" href="#iletisim">Teklif Al</a>
@@ -322,6 +329,7 @@ footer .script{font-size:26px;text-align:right}
     <a href="#sosyal"><span class="ic"><svg><use href="#i-social"/></svg></span>Sosyal Medya<br>Yönetimi</a>
     <a href="#meta"><span class="ic"><svg><use href="#i-meta"/></svg></span>Meta Reklam<br>Yönetimi</a>
     <a href="#eticaret"><span class="ic"><svg><use href="#i-cart"/></svg></span>E-Ticaret<br>Entegrasyonları</a>
+    <a href="#cekim"><span class="ic"><svg><use href="#i-drone"/></svg></span>Drone &amp; Reklam<br>Çekimi</a>
     <a href="#strateji"><span class="ic"><svg><use href="#i-growth"/></svg></span>Dijital Strateji<br>&amp; Büyüme</a>
   </nav>
 
@@ -370,6 +378,16 @@ footer .script{font-size:26px;text-align:right}
         <p>Tüm pazaryerleri tek panelde. Ürünleriniz, stoklarınız ve siparişleriniz otomatik senkronize olur; siz satışa odaklanırsınız.</p>
         <div class="markets" aria-label="Pazaryerleri"><span>trendyol</span><span>hepsiburada</span><span>n11</span><span>idefix</span><span>pazarama</span></div>
         <ul class="checks"><li>Ürün yönetimi</li><li>Sipariş takibi</li><li>Stok senkronizasyonu</li><li>Raporlama</li></ul>
+      </div>
+    </article>
+
+    <article class="feature flip" id="cekim">
+      <div class="shot film"><div class="film-in"><span class="rec">● REC</span><svg class="big"><use href="#i-drone"/></svg><b>4K Drone &amp; Reklam Çekimi</b><span>Havadan ve yerden profesyonel prodüksiyon</span></div><span class="badge"><span class="ic"><svg><use href="#i-drone"/></svg></span>Prodüksiyon</span></div>
+      <div class="copy">
+        <span class="script">Markanızı en iyi açıdan gösterin</span>
+        <h3>Drone &amp; reklam <span>çekimi</span></h3>
+        <p>İşletmenizi, mağazanızı veya ürünlerinizi havadan drone çekimleriyle ve yerden profesyonel reklam çekimleriyle görüntülüyoruz. Instagram Reels, hikâye ve Meta reklamları için kurgulanmış, dikkat çeken videolar üretiyoruz.</p>
+        <ul class="checks"><li>Drone ile havadan çekim</li><li>Sosyal medya reklam çekimi</li><li>Reels &amp; hikâye kurgusu</li><li>Ürün ve mekân tanıtımı</li></ul>
       </div>
     </article>
   </section>
@@ -516,21 +534,19 @@ footer .script{font-size:26px;text-align:right}
         <figcaption><b>Mehmet Yıldırım</b><span>Kurucu · Mehmet Yıldırım Digital</span></figcaption>
       </figure>
       <div class="story">
-        <span class="kicker">Hakkımda</span>
-        <h2 id="h-hak" style="font-size:clamp(30px,4.2vw,48px);line-height:1.04;font-weight:900;color:var(--ink)">Perakendenin içinden gelen bir dijital ajans</h2>
-        <p>Merhaba, ben <strong>Mehmet Yıldırım</strong>. İşe bir Beko mağazasında başladım: kampanyaları kurguluyor, tanıtım görsellerini hazırlıyor, müşterinin mağazaya nasıl geldiğini her gün yakından görüyordum. Oradan öğrendiğim tek bir şey var: <strong>iyi bir ürün, doğru anlatılmadıkça satmaz.</strong></p>
-        <p>Mehmet Yıldırım Digital'i bu yüzden kurdum. Beko yetkili satıcısı için <strong>sepette365.com</strong>'u sıfırdan kurdum; Altunbaş Beko ve sepette365'in Instagram hesaplarını yönetiyorum. Saç ekleme markalarından mahalle berberine kadar farklı sektörlerdeki işletmelerin Meta reklamlarını yürütüyorum.</p>
-        <p>Benimle çalıştığınızda karşınızda bir çağrı merkezi değil, <strong>işinizi bizzat üstlenen biri</strong> olur: telefonu açan da, tasarımı yapan da, sonuçları size raporlayan da benim.</p>
-        <div class="vals">
-          <div><b>Tek muhatap</b><span>Projenizi baştan sona aynı kişi yürütür.</span></div>
-          <div><b>Şeffaf fiyat</b><span>Ne ödediğinizi ve ne aldığınızı bilirsiniz.</span></div>
-          <div><b>Sonuç odaklı</b><span>Güzel görünmek yetmez, satış getirmeli.</span></div>
-        </div>
+        <span class="kicker">Hakkımızda</span>
+        <h2 id="h-hak" style="font-size:clamp(30px,4.2vw,48px);line-height:1.04;font-weight:900;color:var(--ink)">Dijitalde görünürlükten <span style="color:var(--cyan)">fazlası</span></h2>
+        <p><strong>Mehmet Yıldırım Digital;</strong> markaların dijital dünyada güçlü, güvenilir ve ölçülebilir bir yapı oluşturmasına yardımcı olan sonuç odaklı bir dijital çözüm ortağıdır.</p>
+        <p>Perakende, müşteri deneyimi ve e-ticaret alanlarından gelen gerçek saha tecrübemizi; yaratıcı tasarım, stratejik planlama ve performans pazarlamasıyla bir araya getiriyoruz. Çünkü iyi bir ürün veya hizmetin başarıya ulaşması için <strong>doğru hedef kitleye, doğru mesajla ve doğru kanaldan</strong> anlatılması gerektiğine inanıyoruz.</p>
+        <p>Web sitesi tasarımı, sosyal medya yönetimi, Meta reklam yönetimi ve e-ticaret entegrasyonlarını birbirinden bağımsız çalışmalar olarak değil, aynı büyüme stratejisinin tamamlayıcı parçaları olarak ele alıyoruz. Markanızın ihtiyaçlarını analiz ediyor, dijital kanallarınızı tek bir plan altında topluyor ve hedeflerinize uygun çözümler geliştiriyoruz.</p>
+        <p>İçerik planlamasından gönderi ve hikâye tasarımlarına, reklam kampanyalarının oluşturulmasından bütçe yönetimine, pazaryeri entegrasyonlarından satış süreçlerinin takibine kadar tüm çalışmaları <strong>düzenli, şeffaf ve ölçülebilir</strong> biçimde yürütüyoruz. Hangi kanalın ne kadar değer oluşturduğunu anlaşılır raporlarla ortaya koyuyor, bütçenizi sonuç üreten alanlara yönlendiriyoruz.</p>
+        <p>Her markanın hikâyesinin, hedef kitlesinin ve ihtiyaçlarının farklı olduğunu biliyoruz. Bu nedenle hazır kalıplar ve standart çözümler yerine, markanıza özel stratejiler oluşturuyoruz. Sürecin her aşamasında ulaşılabilir, çözüm odaklı ve güvenilir bir iş ortaklığı sunuyoruz.</p>
+        <p>Amacımız yalnızca markanızı dijital dünyada görünür hâle getirmek değil; <strong>operasyonlarınızı kolaylaştırmak, satış gücünüzü artırmak ve sürdürülebilir büyümenize katkı sağlamaktır.</strong></p>
         <div class="igs">
           <a href="https://www.instagram.com/mehmetyildirimdigital/" target="_blank" rel="noopener"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span><span>@mehmetyildirimdigital<small>Ajans hesabı</small></span></a>
           <a href="https://www.instagram.com/mehmetyildrimm/" target="_blank" rel="noopener"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span><span>@mehmetyildrimm<small>Kişisel hesap</small></span></a>
         </div>
-        <span class="sign">Mehmet Yıldırım</span>
+        <span class="sign">Mehmet Yıldırım Digital — Dijitalde görünürlükten fazlası.</span>
       </div>
     </div>
   </section>
@@ -578,6 +594,7 @@ footer .script{font-size:26px;text-align:right}
             <option>Sosyal Medya Yönetimi</option>
             <option>Meta Reklam Yönetimi</option>
             <option>E-Ticaret Entegrasyonları</option>
+            <option>Drone &amp; Reklam Çekimi</option>
             <option>Dijital Strateji &amp; Büyüme</option>
             <option>Birden fazla hizmet</option>
           </select>
