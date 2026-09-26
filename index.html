@@ -199,6 +199,19 @@ footer .script{font-size:26px;text-align:right}
 .concepts-h{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:56px 0 20px;flex-wrap:wrap}
 .concepts-h h3{font-size:clamp(22px,2.6vw,30px);font-weight:900}
 .concepts-h p{color:var(--muted);font-size:15px;max-width:52ch}
+.demos{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.demo{display:block;border-radius:16px;overflow:hidden;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);transition:transform .25s,box-shadow .25s;color:inherit;text-decoration:none}
+.demo:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1px var(--a),0 22px 50px -24px var(--glow)}
+.dm-bar{display:flex;align-items:center;gap:5px;padding:7px 10px;background:#0E2340;border-bottom:1px solid var(--line)}
+.dm-bar i{width:7px;height:7px;border-radius:50%;background:#2A4A78}.dm-bar i:first-child{background:#FF5F57}.dm-bar i:nth-child(2){background:#FEBC2E}.dm-bar i:nth-child(3){background:#28C840}
+.dm-bar span{margin-left:8px;flex:1;background:#081830;border-radius:5px;padding:2px 8px;font-size:10.5px;color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dm-img{position:relative;aspect-ratio:4/3;overflow:hidden}.dm-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}.demo:hover .dm-img img{transform:scale(1.06)}
+.dm-img::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.72),rgba(0,0,0,0) 60%)}
+.dm-img b{position:absolute;left:12px;bottom:10px;z-index:2;color:#fff;font-size:17px;font-weight:800;letter-spacing:.01em}
+.dm-img b::before{content:"";display:block;width:26px;height:3px;border-radius:2px;background:var(--a);margin-bottom:6px}
+.dm-cap{padding:11px 13px 13px}.dm-cap strong{display:block;font-size:14px}.dm-cap span{font-size:12.5px;color:var(--cyan);font-weight:600}
+@media (max-width:1100px){.demos{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:640px){.demos{grid-template-columns:1fr 1fr;gap:12px}.dm-img b{font-size:15px}}
 .concepts{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
 .concept{margin:0;border-radius:18px;overflow:hidden;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);transition:transform .25s,box-shadow .25s}
 .concept:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1px var(--line-2),0 22px 50px -24px var(--glow)}
@@ -392,8 +405,24 @@ footer .script{font-size:26px;text-align:right}
       </a>
     </div>
     <div class="concepts-h">
-      <h3>Konsept tasarımlar</h3>
-      <p>Farklı sektörler için hazırladığımız e-ticaret site konseptleri. Markanıza özel tasarlanır.</p>
+      <h3>Canlı e-ticaret konseptleri</h3>
+      <p>En çok tercih edilen 10 sektör için hazırladığımız, tıklayıp gezebileceğiniz örnek mağaza siteleri.</p>
+    </div>
+    <div class="demos">
+      <a class="demo" href="konsept.html?k=kadin" target="_blank" rel="noopener" style="--a:#A0673E"><div class="dm-shot"><div class="dm-bar"><i></i><i></i><i></i><span>luneatelier.com</span></div><div class="dm-img"><img src="https://images.unsplash.com/photo-1589734004980-8b9507b98604?w=720&amp;q=75&amp;auto=format&amp;fit=crop" alt="Lune Atelier — Kadın Giyim e-ticaret konsept sitesi" loading="lazy"><b>Lune Atelier</b></div></div><div class="dm-cap"><strong>Kadın Giyim</strong><span>Canlı demoyu aç →</span></div></a>
+      <a class="demo" href="konsept.html?k=erkek" target="_blank" rel="noopener" style="--a:#1F3A5F"><div class="dm-shot"><div class="dm-bar"><i></i><i></i><i></i><span>nordemen.com</span></div><div class="dm-img"><img src="https://images.unsplash.com/photo-1597092555685-41e4181d9a53?w=720&amp;q=75&amp;auto=format&amp;fit=crop" alt="Norde Men — Erkek Giyim e-ticaret konsept sitesi" loading="lazy"><b>Norde Men</b></div></div><div class="dm-cap"><strong>Erkek Giyim</strong><span>Canlı demoyu aç →</span></div></a>
+      <a class="demo" href="konsept.html?k=ayakkabi" target="_blank" rel="noopener" style="--a:#C6F432"><div class="dm-shot"><div class="dm-bar"><i></i><i></i><i></i><span>soleasneakers.com</span></div><div class="dm-img"><img src="https://images.unsplash.com/photo-1751326147342-42326374d334?w=720&amp;q=75&amp;auto=format&amp;fit=crop" alt="Solea Sneakers — Spor Ayakkabı e-ticaret konsept sitesi" loading="lazy"><b>Solea Sneakers</b></div></div><div class="dm-cap"><strong>Spor Ayakkabı</strong><span>Canlı demoyu aç →</span></div></a>
+      <a class="demo" href="konsept.html?k=av" target="_blank" rel="noopener" style="--a:#D9661F"><div class="dm-shot"><div class="dm-bar"><i></i><i></i><i></i><span>kuzeyoutdoor.com</span></div><div class="dm-img"><img src="https://images.unsplash.com/photo-1594608567319-b82072f72685?w=720&amp;q=75&amp;auto=format&amp;fit=crop" alt="Kuzey Outdoor — Av & Outdoor e-ticaret konsept sitesi" loading="lazy"><b>Kuzey Outdoor</b></div></div><div class="dm-cap"><strong>Av & Outdoor</strong><span>Canlı demoyu aç →</span></div></a>
+      <a class="demo" href="konsept.html?k=taki" target="_blank" rel="noopener" style="--a:#B8924A"><div class="dm-shot"><div class="dm-bar"><i></i><i></i><i></i><span>elvataki.com</span></div><div class="dm-img"><img src="https://images.unsplash.com/photo-1531995811006-35cb42e1a022?w=720&amp;q=75&amp;auto=format&amp;fit=crop" alt="Elva Takı — Takı & Aksesuar e-ticaret konsept sitesi" loading="lazy"><b>Elva Takı</b></div></div><div class="dm-cap"><strong>Takı & Aksesuar</strong><span>Canlı demoyu aç →</span></div></a>
+      <a class="demo" href="konsept.html?k=pet" target="_blank" rel="noopener" style="--a:#FF7A45"><div class="dm-shot"><div class="dm-bar"><i></i><i></i><i></i><span>patilidostlar.com</span></div><div class="dm-img"><img src="https://images.unsplash.com/photo-1579119134757-5c38803f34fc?w=720&amp;q=75&amp;auto=format&amp;fit=crop" alt="Patili Dostlar — Pet Shop e-ticaret konsept sitesi" loading="lazy"><b>Patili Dostlar</b></div></div><div class="dm-cap"><strong>Pet Shop</strong><span>Canlı demoyu aç →</span></div></a>
+      <a class="demo" href="konsept.html?k=bebek" target="_blank" rel="noopener" style="--a:#E98AA3"><div class="dm-shot"><div class="dm-bar"><i></i><i></i><i></i><span>minikadim.com</span></div><div class="dm-img"><img src="https://images.unsplash.com/photo-1774578342155-8d7e44a18bfd?w=720&amp;q=75&amp;auto=format&amp;fit=crop" alt="Minik Adım — Anne & Bebek e-ticaret konsept sitesi" loading="lazy"><b>Minik Adım</b></div></div><div class="dm-cap"><strong>Anne & Bebek</strong><span>Canlı demoyu aç →</span></div></a>
+      <a class="demo" href="konsept.html?k=kuru" target="_blank" rel="noopener" style="--a:#D4A24C"><div class="dm-shot"><div class="dm-bar"><i></i><i></i><i></i><span>kavruk.com</span></div><div class="dm-img"><img src="https://images.unsplash.com/photo-1543158181-1274e5362710?w=720&amp;q=75&amp;auto=format&amp;fit=crop" alt="Kavruk — Kuruyemiş & Kahve e-ticaret konsept sitesi" loading="lazy"><b>Kavruk</b></div></div><div class="dm-cap"><strong>Kuruyemiş & Kahve</strong><span>Canlı demoyu aç →</span></div></a>
+      <a class="demo" href="konsept.html?k=tekstil" target="_blank" rel="noopener" style="--a:#9DB596"><div class="dm-shot"><div class="dm-bar"><i></i><i></i><i></i><span>pamukev.com</span></div><div class="dm-img"><img src="https://images.unsplash.com/photo-1522444278776-b4adce133d57?w=720&amp;q=75&amp;auto=format&amp;fit=crop" alt="Pamuk Ev — Ev Tekstili e-ticaret konsept sitesi" loading="lazy"><b>Pamuk Ev</b></div></div><div class="dm-cap"><strong>Ev Tekstili</strong><span>Canlı demoyu aç →</span></div></a>
+      <a class="demo" href="konsept.html?k=optik" target="_blank" rel="noopener" style="--a:#5B8CFF"><div class="dm-shot"><div class="dm-bar"><i></i><i></i><i></i><span>vizyonoptik.com</span></div><div class="dm-img"><img src="https://images.unsplash.com/photo-1610013598025-8e6562cefc4e?w=720&amp;q=75&amp;auto=format&amp;fit=crop" alt="Vizyon Optik — Optik & Gözlük e-ticaret konsept sitesi" loading="lazy"><b>Vizyon Optik</b></div></div><div class="dm-cap"><strong>Optik & Gözlük</strong><span>Canlı demoyu aç →</span></div></a>
+    </div>
+    <div class="concepts-h">
+      <h3>Hikâye tasarımları</h3>
+      <p>Farklı sektörler için hazırladığımız Instagram hikâye tanıtım görselleri.</p>
     </div>
     <div class="concepts">
       <figure class="concept"><a href="ref-sac.webp" target="_blank" rel="noopener"><img src="ref-sac.webp" alt="Saç satış + randevu site konsepti" width="288" height="512" loading="lazy"></a><figcaption>Saç satış + randevu<span>Online satış ve salon randevusu</span></figcaption></figure>
